@@ -6,7 +6,7 @@ import Footer from './Footer';
 import { ThemeProvider } from 'styled-components';
 import theme from '../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
-import Profile from './Profile';
+import Profile from './Section/Profile';
 
 const ContentBlock = styled.div`
   margin-top: 2rem;
