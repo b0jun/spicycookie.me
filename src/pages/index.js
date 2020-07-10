@@ -1,7 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+import Layout from '../components/Layout';
+
+const Block = styled.div``;
 
 const IndexPage = () => {
-  return <div>I'm Jun</div>;
+  return (
+    <Layout>
+      <Block>I'm Jun</Block>
+    </Layout>
+  );
 };
 
 export default IndexPage;
