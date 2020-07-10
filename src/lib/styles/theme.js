@@ -1,6 +1,7 @@
 const theme = {
   palette: {
     mainBlack: '#1c1c1e',
+    subBlack: '#454545',
     mainWhite: '#eeeeee',
     headerBackground: '#645c84',
     dateFont: '#dfd3c3',
@@ -17,6 +18,7 @@ const theme = {
   },
   sizes: {
     maxWidth: '1100px',
+    profileWidth: '300px',
   },
   sideSpace: {
     small: '20px',
