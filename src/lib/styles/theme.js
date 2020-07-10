@@ -2,8 +2,9 @@ const theme = {
   palette: {
     mainBlack: '#1c1c1e',
     mainWhite: '#eeeeee',
-    headerBackground: '#ea5455',
+    headerBackground: '#645c84',
     dateFont: '#dfd3c3',
+    darkBlue: '#52616b',
     brightRed: '#f38181',
     brightBlue: '#a8d8ea',
     brightGreen: '#d9134a',

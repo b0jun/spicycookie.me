@@ -10,7 +10,9 @@ const FooterBlock = styled.div`
 const FooterInner = styled.div`
   font-size: 14px;
   text-align: center;
-  color: #52616b;
+  color: ${props => props.theme.palette.darkBlue};
+  padding: 2rem;
+  border-top: solid 1px ${props => props.theme.palette.darkBlue};
 `;
 
 const Footer = () => {
@@ -19,7 +21,6 @@ const Footer = () => {
       <ContentWrapper>
         <FooterInner>
           <p>
-            {' '}
             Copyright © {new Date().getFullYear()}{' '}
             <Link to="https://github.com/billowycloud">Spicy Cookie (Byeong Jun)</Link>
           </p>
