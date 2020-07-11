@@ -24,7 +24,6 @@ const ContentBlock = styled.div`
   }
 `;
 const MainWrapper = styled.div`
-  background: red;
   width: calc(100% - ${props => props.theme.sizes.profileWidth} - 40px);
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     width: 100%;

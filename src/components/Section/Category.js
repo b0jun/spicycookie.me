@@ -16,7 +16,7 @@ const Category = () => {
       <List>
         <Item>
           <SLink>
-            <img />
+            <img alt="" />
           </SLink>
         </Item>
       </List>
