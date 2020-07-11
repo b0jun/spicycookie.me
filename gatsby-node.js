@@ -42,7 +42,8 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMarkdownRemark.edges.filter(
       ({ node }) => !node.frontmatter.private,
     );
-    posts.forEach((post, index) => {
+
+    posts.forEach(function (post, index) {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
       createPage({
