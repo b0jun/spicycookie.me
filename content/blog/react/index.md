@@ -2,6 +2,7 @@
 title: 'React'
 date: '2020-07-11'
 category: 'category2'
+cover: './react.jpeg'
 private: false
 ---
 

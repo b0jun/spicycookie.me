@@ -27,6 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             frontmatter {
               title
+              date(formatString: "YYYY.MM.DD")
               category
               private
             }

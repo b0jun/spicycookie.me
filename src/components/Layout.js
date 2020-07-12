@@ -12,7 +12,6 @@ const ContentBlock = styled.div`
   margin-top: 2rem;
   display: flex;
   min-height: 120vh;
-  background: blue;
   align-items: flex-start;
   justify-content: space-between;
   @media screen and (max-width: ${props => props.theme.responsive.large}) {

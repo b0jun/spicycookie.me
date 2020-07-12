@@ -1,14 +1,32 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
+
+const Block = styled.div`
+  background: #fff;
+`;
+
+const ContentWrapper = styled.div`
+  padding: 2rem ${props => props.theme.sideSpace.contentLarge};
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    padding: 30px ${props => props.theme.sideSpace.contentSmall};
+  }
+`;
 
 export default ({ data }) => {
-  const post = data.markdownRemark;
+  const { html } = data.markdownRemark;
+  const { title, date, category } = data.markdownRemark.frontmatter;
   return (
     <Layout>
-      <h1 style={{ fontSize: '6rem' }}>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
-      <p>{post.frontmatter.category}</p>
+      <Block>
+        <ContentWrapper>
+          <h1 style={{ fontSize: '6rem' }}>{title}</h1>
+          <p>{date}</p>
+          <p>{category}</p>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </ContentWrapper>
+      </Block>
     </Layout>
   );
 };

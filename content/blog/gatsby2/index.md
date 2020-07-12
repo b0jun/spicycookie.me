@@ -1,7 +1,8 @@
 ---
-title: 'Gatsby'
-date: '2020-07-10'
+title: 'Gatsby2'
+date: '2020-07-11'
 category: 'category1'
+cover: './gatsby2.jpeg'
 private: false
 ---
 

@@ -9,9 +9,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Category />
-      {console.log(posts)}
-      {posts.map(post => {
-        return <PostCard post={post} />;
+      {posts.map(({ node }) => {
+        return <PostCard key={node.fields.slug} post={node} />;
       })}
     </Layout>
   );

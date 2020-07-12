@@ -29,11 +29,11 @@ const SLink = styled(Link)``;
 const PostCard = ({ post }) => {
   return (
     <Block>
-      <SLink to={post.node.fields.slug}>
-        <Title>{post.node.frontmatter.title}</Title>
-        <Description>{post.node.excerpt}</Description>
-        <Date>{post.node.frontmatter.date}</Date>
-        <Label>{post.node.frontmatter.category}</Label>
+      <SLink to={post.fields.slug}>
+        <Title>{post.frontmatter.title}</Title>
+        <Description>{post.excerpt}</Description>
+        <Date>{post.frontmatter.date}</Date>
+        <Label>{post.frontmatter.category}</Label>
       </SLink>
     </Block>
   );

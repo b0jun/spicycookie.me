@@ -2,6 +2,7 @@
 title: 'Private'
 date: '2020-07-08'
 category: 'category3'
+cover: './private.jpeg'
 private: true
 ---
 
