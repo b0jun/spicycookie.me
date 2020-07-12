@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const FooterBlock = styled.div`
   height: 100px;
+  padding-top: 2rem;
 `;
 
 const FooterInner = styled.div`

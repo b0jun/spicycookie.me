@@ -35,6 +35,13 @@ export const query = graphql`
             date(formatString: "YYYY.MM.DD")
             category
             private
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

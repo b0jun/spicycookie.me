@@ -2,7 +2,7 @@
 title: 'React를 잘 다루는 방법을 알아보자'
 date: '2020-07-11'
 category: 'category2'
-cover: './react.jpeg'
+cover: './react.png'
 private: false
 ---
 

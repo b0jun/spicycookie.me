@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 const Block = styled.div`
   font-size: 3rem;
@@ -49,15 +50,25 @@ const Label = styled.p`
 `;
 
 const Cover = styled.div`
-  background: white;
   width: 160px;
   height: 160px;
   border-radius: 20px;
+  img {
+    border-radius: 20px;
+  }
+  /* Img의 부모스타일 요소에 접근은 class 요소를 통해서 밖에없는가?? */
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const Info = styled.div`
   width: calc(100% - 180px);
   padding-left: 20px;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 const PostWrapper = styled.div`
   display: flex;
@@ -107,14 +118,18 @@ const PostWrapper = styled.div`
     }
   }
 `;
+
 const PostCard = ({ post }) => {
   const { title, date, category } = post.frontmatter;
   const { excerpt } = post;
+  const cover = post.frontmatter.cover.childImageSharp.fluid;
   return (
     <Block>
       <Link to={post.fields.slug}>
         <PostWrapper>
-          <Cover></Cover>
+          <Cover>
+            <Img fluid={cover} />
+          </Cover>
           <Info>
             <Title>{title}</Title>
             <Date>{date}</Date>

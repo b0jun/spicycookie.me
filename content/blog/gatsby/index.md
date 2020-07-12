@@ -2,7 +2,7 @@
 title: 'Gatsby'
 date: '2020-07-10'
 category: 'category1'
-cover: './gatsby.jpeg'
+cover: './gatsby.jpg'
 private: false
 ---
 
