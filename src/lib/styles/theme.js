@@ -10,6 +10,7 @@ const theme = {
     brightBlue: '#a8d8ea',
     brightGreen: '#d9134a',
     brightYellow: '#edf492',
+    description: '#e7e6e1',
   },
   responsive: {
     small: '500px',

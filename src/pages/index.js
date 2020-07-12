@@ -26,13 +26,13 @@ export const query = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 100, truncate: true)
+          excerpt(pruneLength: 140, truncate: true)
           fields {
             slug
           }
           frontmatter {
             title
-            date(formatString: "YYYY년 MM월 DD일")
+            date(formatString: "YYYY.MM.DD")
             category
             private
           }

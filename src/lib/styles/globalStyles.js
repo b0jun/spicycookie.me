@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 	body {
 		line-height: 1;
-		background: #1c1c1e;
+		background: ${props => props.theme.palette.mainBlack};
 	}
 	a{
 		text-decoration: none;
