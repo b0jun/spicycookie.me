@@ -11,9 +11,9 @@ const FooterBlock = styled.div`
 const FooterInner = styled.div`
   font-size: 14px;
   text-align: center;
-  color: ${props => props.theme.palette.darkBlue};
+  color: ${props => props.theme.palette.footerFont};
   padding: 2rem;
-  border-top: solid 1px ${props => props.theme.palette.darkBlue};
+  border-top: solid 1px ${props => props.theme.palette.footerFont};
 `;
 
 const Footer = () => {

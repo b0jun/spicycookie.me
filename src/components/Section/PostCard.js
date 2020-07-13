@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 const Block = styled.div`
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 16px 0px;
   border-radius: 20px;
   background: ${props => props.theme.palette.subBlack};
   transition: transform 500ms;
@@ -73,7 +73,21 @@ const Info = styled.div`
 const PostWrapper = styled.div`
   display: flex;
   padding: 20px;
-
+  @media screen and (max-width: ${props => props.theme.responsive.largest}) {
+    ${Cover} {
+      width: 150px;
+      height: 150px;
+    }
+    ${Info} {
+      width: calc(100% - 170px);
+    }
+    ${Title} {
+      font-size: 1.3rem;
+    }
+    ${Description} {
+      font-size: 0.8rem;
+    }
+  }
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     ${Cover} {
       width: 140px;
@@ -91,7 +105,6 @@ const PostWrapper = styled.div`
       padding-bottom: 0.8rem;
     }
     ${Description} {
-      font-size: 0.8rem;
       padding-bottom: 1rem;
       line-height: 1rem;
     }
@@ -99,7 +112,23 @@ const PostWrapper = styled.div`
       font-size: 0.8rem;
     }
   }
-
+  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+    ${Cover} {
+      width: 130px;
+      height: 130px;
+    }
+    ${Info} {
+      width: calc(100% - 150px);
+    }
+    ${Title} {
+      font-size: 1.1rem;
+      padding-bottom: 0.6rem;
+    }
+    ${Date} {
+      font-size: 0.8rem;
+      padding-bottom: 0.6rem;
+    }
+  }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     ${Cover} {
       width: 120px;
@@ -109,12 +138,15 @@ const PostWrapper = styled.div`
       width: calc(100% - 140px);
     }
     ${Title} {
-      font-size: 1.1rem;
+      font-size: 1rem;
       padding-bottom: 0.6rem;
     }
     ${Date} {
-      font-size: 0.8rem;
-      padding-bottom: 0.6rem;
+      font-size: 0.7rem;
+      padding-bottom: 0.4rem;
+    }
+    ${Description} {
+      font-size: 0.7rem;
     }
   }
 `;

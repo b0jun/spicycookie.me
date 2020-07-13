@@ -8,13 +8,14 @@ import theme from '../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
 import Profile from './Section/Profile';
 
+//[addPoint] : markdown페이지 일 경우 'flex-direction: column' 으로 적용하기
 const ContentBlock = styled.div`
   margin-top: 2rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: flex-start;
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
