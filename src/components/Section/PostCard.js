@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -10,7 +10,6 @@ const Block = styled.div`
   border-radius: 20px;
   background: ${props => props.theme.palette.subBlack};
   transition: transform 500ms;
-
   &:hover {
     transform: translateY(-5px);
   }
@@ -20,7 +19,6 @@ const Block = styled.div`
     }
   }
 `;
-
 const Title = styled.h1`
   font-size: 1.4rem;
   color: ${props => props.theme.palette.mainWhite};
@@ -33,7 +31,6 @@ const Description = styled.p`
   font-weight: 500;
   line-height: 1.2rem;
 `;
-
 const Date = styled.p`
   font-size: 0.9rem;
   color: ${props => props.theme.palette.dateFont};
@@ -41,14 +38,33 @@ const Date = styled.p`
 `;
 const Label = styled.p`
   font-size: 0.9rem;
-  span {
-    background: ${props => props.theme.palette.brightRed};
-    padding: 3px 6px;
-    border-radius: 8px;
-    color: ${props => props.theme.palette.mainBlack};
-  }
 `;
 
+const Name = styled.span`
+  padding: 3px 6px;
+  border-radius: 8px;
+  ${props => {
+    if (props.category === 'category1') {
+      return css`
+        background: ${props => props.theme.palette.brightRed};
+      `;
+    }
+    if (props.category === 'category2') {
+      return css`
+        background: ${props => props.theme.palette.brightBlue};
+      `;
+    }
+    if (props.category === '웹 개발') {
+      return css`
+        background: ${props => props.theme.palette.brightGreen};
+      `;
+    }
+    /* [category]: 색 설정 시 해당 카테고리 명으로 추가 */
+    return css`
+      background: ${props => props.theme.palette.mainWhite};
+    `;
+  }};
+`;
 const Cover = styled.div`
   width: 160px;
   height: 160px;
@@ -150,7 +166,6 @@ const PostWrapper = styled.div`
     }
   }
 `;
-
 const PostCard = ({ post }) => {
   const { title, date, category } = post.frontmatter;
   const { excerpt } = post;
@@ -167,7 +182,7 @@ const PostCard = ({ post }) => {
             <Date>{date}</Date>
             <Description>{excerpt}</Description>
             <Label>
-              <span>{category}</span>
+              <Name category={category}>{category}</Name>
             </Label>
           </Info>
         </PostWrapper>

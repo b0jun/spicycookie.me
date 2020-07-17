@@ -4,14 +4,23 @@ import Category from '../components/Section/Category';
 import PostCard from '../components/Section/PostCard';
 import { graphql } from 'gatsby';
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location: { pathname } }) => {
   const posts = data.allMarkdownRemark.edges;
+  const decodePathname = decodeURI(pathname).replace(/(\s)|(-)/gi, '');
   return (
     <Layout>
-      <Category />
-      {posts.map(({ node }) => {
-        return <PostCard key={node.fields.slug} post={node} />;
-      })}
+      <Category pathname={pathname} posts={posts} />
+      {pathname === '/'
+        ? posts.map(({ node }) => {
+            return <PostCard key={node.fields.slug} post={node} />;
+          })
+        : posts
+            .filter(
+              ({ node }) =>
+                decodePathname.indexOf(`${node.frontmatter.category.replace(/(\s)|(-)/gi, '')}`) !==
+                -1,
+            )
+            .map(({ node }) => <PostCard key={node.fields.slug} post={node} />)}
     </Layout>
   );
 };

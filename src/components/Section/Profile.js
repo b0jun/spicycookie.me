@@ -34,7 +34,7 @@ const ProfileBlock = styled.div`
     width: 100%;
     position: relative;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   text-align: center;
 `;

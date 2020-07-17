@@ -9,11 +9,12 @@ const theme = {
     footerFont: '#52616b',
     brightRed: '#f38181',
     brightBlue: '#a8d8ea',
-    brightGreen: '#d9134a',
+    brightGreen: '#b7fd00',
     brightYellow: '#edf492',
     description: '#e7e6e1',
     profileJob: '#7c8097',
     profileDesc: '#b7b8c0',
+    categoryBackground: '#393e46',
   },
   responsive: {
     small: '500px',
