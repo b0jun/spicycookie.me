@@ -15,9 +15,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 /* Creating pages */
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -35,27 +35,24 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      throw result.errors;
-    }
+  `);
+  if (result.errors) {
+    throw result.errors;
+  }
 
-    const posts = result.data.allMarkdownRemark.edges.filter(
-      ({ node }) => !node.frontmatter.private,
-    );
+  const posts = result.data.allMarkdownRemark.edges.filter(({ node }) => !node.frontmatter.private);
 
-    posts.forEach(function (post, index) {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-      const next = index === 0 ? null : posts[index - 1].node;
-      createPage({
-        path: post.node.fields.slug,
-        component: path.resolve(`./src/templates/post-frame.js`),
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      });
+  posts.forEach(function (post, index) {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+    const next = index === 0 ? null : posts[index - 1].node;
+    createPage({
+      path: post.node.fields.slug,
+      component: path.resolve(`./src/templates/post-frame.js`),
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
     });
   });
 };
