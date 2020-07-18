@@ -1,9 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
+import githubStyles from '../lib/styles/githubStyles';
+import _ from 'lodash';
 
 const Block = styled.div`
+  ${githubStyles}
   background: #fff;
 `;
 
@@ -14,16 +17,33 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const Title = styled.h1`
+  border-bottom: 1px solid ${props => props.theme.palette.profileDesc};
+`;
+const Category = styled(Link)`
+  background: gray;
+  border-radius: 20px;
+  padding: 5px 10px;
+`;
+const Date = styled.p`
+  text-align: right;
+  color: ${props => props.theme.palette.profileDesc};
+`;
+
 export default ({ data }) => {
   const { html } = data.markdownRemark;
   const { title, date, category } = data.markdownRemark.frontmatter;
+  let categoryLink = _.kebabCase(category);
   return (
     <Layout>
       <Block>
+        <div style={{ background: 'black' }}>ddddddd</div>
         <ContentWrapper>
-          <h1 style={{ fontSize: '6rem' }}>{title}</h1>
-          <p>{date}</p>
-          <p>{category}</p>
+          <Category style={{ color: 'white' }} to={`/category/${categoryLink}`}>
+            {category}
+          </Category>
+          <Title style={{ fontSize: '4rem', lineHeight: '1.5' }}>{title}</Title>
+          <Date style={{ lineHeight: '1' }}>{date}</Date>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </ContentWrapper>
       </Block>
@@ -38,7 +58,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY년 MM월 DD일")
+        date(formatString: "YYYY.MM.DD")
         category
       }
     }

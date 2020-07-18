@@ -42,7 +42,7 @@ const Label = styled.p`
 
 const Name = styled.span`
   padding: 3px 6px;
-  border-radius: 8px;
+  border-radius: 15px;
   ${props => {
     if (props.category === 'category1') {
       return css`

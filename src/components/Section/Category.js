@@ -46,6 +46,10 @@ const Item = styled(Link)`
     font-weight: 500;
   }
   &:hover {
+    background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
+    div {
+      color: ${props => props.theme.palette.mainBlack};
+    }
     animation: ${shake} 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
@@ -55,22 +59,9 @@ const Item = styled(Link)`
   ${props =>
     props.current &&
     css`
-      &:hover {
-        div {
-          color: ${props => props.theme.palette.mainBlack};
-        }
-      }
-      &::after {
-        padding: 2px;
-        z-index: -1;
-        content: '';
-        background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        border-radius: 20px;
-        width: 100%;
-        height: 100%;
+      background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
+      div {
+        color: ${props => props.theme.palette.mainBlack};
       }
     `};
 `;
