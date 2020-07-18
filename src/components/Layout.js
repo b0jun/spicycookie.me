@@ -7,15 +7,15 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
 import Profile from './Section/Profile';
+import { globalHistory as history } from '@reach/router';
 
-//[addPoint] : markdown페이지 일 경우 'flex-direction: column' 으로 적용하기
 const ContentBlock = styled.div`
   margin-top: 2rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
-    flex-direction: column-reverse;
+    flex-direction: ${props => (props.pathname ? 'column-reverse' : 'column')};
     justify-content: flex-start;
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
@@ -30,12 +30,15 @@ const MainWrapper = styled.div`
 `;
 
 const Layout = ({ children }) => {
+  const {
+    location: { pathname },
+  } = history;
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
       <ContentWrapper>
-        <ContentBlock>
+        <ContentBlock pathname={pathname === '/' || pathname.indexOf('/category/') !== -1}>
           <MainWrapper>
             <main>{children}</main>
           </MainWrapper>
