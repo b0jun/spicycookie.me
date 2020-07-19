@@ -41,7 +41,7 @@ const Label = styled.p`
 `;
 
 const Name = styled.span`
-  padding: 3px 6px;
+  padding: 3px 10px;
   border-radius: 15px;
   ${props => {
     if (props.category === 'category1') {

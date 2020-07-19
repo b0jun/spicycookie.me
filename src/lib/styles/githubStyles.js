@@ -252,7 +252,7 @@ const githubStyles = css`
   }
 
   blockquote {
-    border-left: 4px solid #dddddd;
+    border-left: 4px solid #30e3ca;
     padding: 0 15px;
     color: #777777;
   }
@@ -425,7 +425,7 @@ const githubStyles = css`
   }
 
   pre {
-    background-color: #f8f8f8;
+    background-color: #dbe2ef;
     border: 1px solid #cccccc;
     font-size: 13px;
     line-height: 19px;

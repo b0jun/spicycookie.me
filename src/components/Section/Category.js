@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'gatsby';
+import { FaTag } from 'react-icons/fa';
+import { FaBookOpen } from 'react-icons/fa';
 
 const _ = require('lodash');
 
@@ -85,7 +87,10 @@ const Category = ({ pathname, posts }) => {
     <Block>
       <List>
         <Item to="/" current={pathname === '/' ? 1 : 0}>
-          <div>All</div>
+          <div>
+            <FaBookOpen size={13} style={{ marginRight: '6px' }} />
+            All
+          </div>
         </Item>
         {categories.map((category, idx) => (
           <Item
@@ -94,7 +99,10 @@ const Category = ({ pathname, posts }) => {
             category={category}
             current={decodeURI(pathname) === `/category/${category}` ? 1 : 0}
           >
-            <div>{category.replace(/(\s)|(-)/gi, ' ')}</div>
+            <div>
+              <FaTag size={11} style={{ marginRight: '6px' }} />
+              {category.replace(/(\s)|(-)/gi, ' ')}
+            </div>
           </Item>
         ))}
       </List>
