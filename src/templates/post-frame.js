@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import githubStyles from '../lib/styles/githubStyles';
 import _ from 'lodash';
-import { FaTag } from 'react-icons/fa';
+import { FaTag, FaArrowLeft } from 'react-icons/fa';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 const Block = styled.div`
@@ -25,6 +25,7 @@ const Title = styled.h1`
   border-bottom: 1px solid ${props => props.theme.palette.profileDesc};
   span {
     font-size: 2.2rem;
+    font-weight: bolder;
     color: #0d7377;
     @media screen and (max-width: ${props => props.theme.responsive.largest}) {
       font-size: 1.9rem;
@@ -58,27 +59,57 @@ const Header = styled.div`
   background: ${props => props.theme.palette.brightBlue2};
   min-height: 200px;
 `;
+const TopContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const BackBtn = styled(Link)`
+  span {
+    transition: background 300ms;
+    border-radius: 20px;
+    border: 2px solid ${props => props.theme.palette.mainBackground};
+    padding: 7px 12px;
+    color: ${props => props.theme.palette.mainBackground};
+    &:hover {
+      background: ${props => props.theme.palette.mainBackground};
+      color: ${props => props.theme.palette.mainFont};
+    }
+  }
+`;
+const Wrapper = styled.div`
+  margin-bottom: 3rem;
+`;
 
 export default ({ data }) => {
   deckDeckGoHighlightElement();
   const { html } = data.markdownRemark;
   const { title, date, category } = data.markdownRemark.frontmatter;
-  let categoryLink = _.kebabCase(category);
+  const categoryLink = _.kebabCase(category);
   return (
     <Layout>
       <Block>
         <Header />
         <ContentWrapper>
-          <Category to={`/category/${categoryLink}`}>
-            <span>
-              <FaTag size={13} style={{ marginRight: '8px' }} />
-              {category}
-            </span>
-          </Category>
-          <Title>
-            <span>{title}</span>
-          </Title>
-          <Date style={{ lineHeight: '1' }}>{date}</Date>
+          <Wrapper>
+            <TopContent>
+              <Category to={`/category/${categoryLink}`}>
+                <span>
+                  <FaTag size={13} style={{ marginRight: '8px' }} />
+                  {category}
+                </span>
+              </Category>
+              <BackBtn to="/">
+                <span>
+                  <FaArrowLeft size={12} style={{ marginRight: '8px' }} />
+                  Back to Blog
+                </span>
+              </BackBtn>
+            </TopContent>
+            <Title style={{ marginTop: '1.7rem' }}>
+              <span>{title}</span>
+            </Title>
+            <Date style={{ lineHeight: '1' }}>{date}</Date>
+          </Wrapper>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </ContentWrapper>
       </Block>
@@ -93,7 +124,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY.MM.DD")
+        date(formatString: "MMMM Do, YYYY")
         category
       }
     }
