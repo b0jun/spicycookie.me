@@ -6,9 +6,9 @@ import Img from 'gatsby-image';
 const Block = styled.div`
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 16px 0px;
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   border-radius: 20px;
-  background: ${props => props.theme.palette.subBlack};
+  background: ${props => props.theme.palette.postCard};
   transition: transform 500ms;
   &:hover {
     transform: translateY(-5px);
@@ -21,7 +21,7 @@ const Block = styled.div`
 `;
 const Title = styled.h1`
   font-size: 1.4rem;
-  color: ${props => props.theme.palette.mainWhite};
+  color: ${props => props.theme.palette.mainFont};
   padding-bottom: 0.8rem;
 `;
 const Description = styled.p`
@@ -41,6 +41,7 @@ const Label = styled.p`
 `;
 
 const Name = styled.span`
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   padding: 3px 10px;
   border-radius: 15px;
   ${props => {
@@ -61,11 +62,12 @@ const Name = styled.span`
     }
     /* [category]: 색 설정 시 해당 카테고리 명으로 추가 */
     return css`
-      background: ${props => props.theme.palette.mainWhite};
+      background: ${props => props.theme.palette.mainFont};
     `;
   }};
 `;
 const Cover = styled.div`
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   width: 160px;
   height: 160px;
   border-radius: 20px;

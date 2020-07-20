@@ -34,12 +34,12 @@ const Category = styled(Link)`
     transform: color 10ms ease-in;
     &:hover {
       background: ${props => props.theme.palette.brightGreen2};
-      color: ${props => props.theme.palette.mainWhite};
+      color: ${props => props.theme.palette.mainFont};
     }
   }
 `;
 const Date = styled.p`
-  margin: 0;
+  font-style: italic;
   padding-right: 0.5rem;
   text-align: right;
   color: ${props => props.theme.palette.profileDesc};

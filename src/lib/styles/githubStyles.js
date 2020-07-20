@@ -399,11 +399,11 @@ const githubStyles = css`
   code,
   tt {
     margin: 0 2px;
-    padding: 0 5px;
+    padding: 0 8px;
     white-space: nowrap;
-    border: 1px solid #eaeaea;
-    background-color: #f8f8f8;
-    border-radius: 3px;
+    background-color: #ffe2e2;
+    border-radius: 5px;
+    color: #d34659;
   }
 
   pre code {
@@ -425,13 +425,13 @@ const githubStyles = css`
   }
 
   pre {
-    background-color: #dbe2ef;
+    background-color: #282c34;
     border: 1px solid #cccccc;
     font-size: 13px;
     line-height: 19px;
     overflow: auto;
     padding: 6px 10px;
-    border-radius: 3px;
+    border-radius: 10px;
   }
 
   pre code,

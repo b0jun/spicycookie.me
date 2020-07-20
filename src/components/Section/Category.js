@@ -35,6 +35,7 @@ const List = styled.ul`
 `;
 
 const Item = styled(Link)`
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   position: relative;
   float: left;
   margin-right: 1rem;
@@ -50,7 +51,7 @@ const Item = styled(Link)`
   &:hover {
     background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
     div {
-      color: ${props => props.theme.palette.mainBlack};
+      color: ${props => props.theme.palette.mainBackground};
     }
     animation: ${shake} 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
@@ -63,7 +64,7 @@ const Item = styled(Link)`
     css`
       background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
       div {
-        color: ${props => props.theme.palette.mainBlack};
+        color: ${props => props.theme.palette.mainBackground};
       }
     `};
 `;
@@ -75,7 +76,7 @@ const CategoryTitle = styled.div`
 
   font-size: 1.7rem;
   font-weight: bold;
-  color: ${props => props.theme.palette.mainWhite};
+  color: ${props => props.theme.palette.mainFont};
 `;
 
 const Category = ({ pathname, posts }) => {

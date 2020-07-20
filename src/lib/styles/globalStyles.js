@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 	@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
 	body {
-		background: ${props => props.theme.palette.mainBlack};
+		background: ${props => props.theme.palette.mainBackground};
 		font-family: 'Nanum Gothic', sans-serif;	}
 	a{
 		text-decoration: none;

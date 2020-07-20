@@ -9,7 +9,7 @@ const HeaderBlock = styled.div`
   background: ${props => props.theme.palette.headerBackground};
   width: 100%;
   height: 60px;
-  box-shadow: 0px 2px 4px #1e1e1e;
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
 `;
 const HeaderInner = styled.div`
   height: 60px;

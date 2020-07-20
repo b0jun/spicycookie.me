@@ -26,9 +26,9 @@ const ProfileBlock = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 4px;
-  background: ${props => props.theme.palette.darkBlue};
+  background: ${props => props.theme.palette.profileBackground};
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 16px 0px;
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   width: ${props => props.theme.sizes.profileWidth};
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     width: 100%;
@@ -47,11 +47,12 @@ const Header = styled.div`
     height: 116px;
     border-radius: 100%;
     margin-bottom: 1.5rem;
+    box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   }
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: ${props => props.theme.palette.mainWhite};
+    color: ${props => props.theme.palette.mainFont};
     margin-bottom: 1rem;
   }
   p {
@@ -75,6 +76,7 @@ const Footer = styled.div`
 `;
 
 const Item = styled.a`
+  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   border-radius: 100%;
   width: 50px;
   height: 50px;
