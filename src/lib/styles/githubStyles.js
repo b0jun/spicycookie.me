@@ -132,7 +132,74 @@ const githubStyles = css`
     color: #777777;
     font-size: 14px;
   }
+  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    h1 {
+      font-size: 26px;
+      color: black;
+    }
 
+    h2 {
+      font-size: 22px;
+      border-bottom: 1px solid #cccccc;
+      color: black;
+    }
+
+    h3 {
+      font-size: 17px;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+
+    h5 {
+      font-size: 13px;
+    }
+
+    h6 {
+      color: #777777;
+      font-size: 12px;
+    }
+  }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    h1 {
+      font-size: 24px;
+      color: black;
+    }
+
+    h2 {
+      font-size: 20px;
+      border-bottom: 1px solid #cccccc;
+      color: black;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+
+    h5 {
+      font-size: 12px;
+    }
+
+    h6 {
+      color: #777777;
+      font-size: 12px;
+    }
+    p,
+    blockquote,
+    ul,
+    ol,
+    dl,
+    li,
+    table,
+    pre {
+      font-size: 14px;
+    }
+  }
   p,
   blockquote,
   ul,
@@ -412,6 +479,7 @@ const githubStyles = css`
     white-space: pre;
     border: none;
     background: transparent;
+    color: #ffffdd;
   }
 
   .highlight pre {
@@ -425,8 +493,7 @@ const githubStyles = css`
   }
 
   pre {
-    background-color: #282c34;
-    border: 1px solid #cccccc;
+    background-color: #263238;
     font-size: 13px;
     line-height: 19px;
     overflow: auto;
@@ -438,6 +505,13 @@ const githubStyles = css`
   pre tt {
     background-color: transparent;
     border: none;
+  }
+  deckgo-highlight-code {
+    line-height: 1.5;
+    font-size: 1.2rem;
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      font-size: 1rem;
+    }
   }
 `;
 export default githubStyles;

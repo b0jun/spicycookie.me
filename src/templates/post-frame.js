@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import githubStyles from '../lib/styles/githubStyles';
 import _ from 'lodash';
 import { FaTag } from 'react-icons/fa';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 const Block = styled.div`
   ${githubStyles}
@@ -22,6 +23,13 @@ const ContentWrapper = styled.div`
 
 const Title = styled.h1`
   border-bottom: 1px solid ${props => props.theme.palette.profileDesc};
+  span {
+    font-size: 2.2rem;
+    color: #0d7377;
+    @media screen and (max-width: ${props => props.theme.responsive.largest}) {
+      font-size: 1.9rem;
+    }
+  }
 `;
 const Category = styled(Link)`
   span {
@@ -52,6 +60,7 @@ const Header = styled.div`
 `;
 
 export default ({ data }) => {
+  deckDeckGoHighlightElement();
   const { html } = data.markdownRemark;
   const { title, date, category } = data.markdownRemark.frontmatter;
   let categoryLink = _.kebabCase(category);
@@ -66,7 +75,9 @@ export default ({ data }) => {
               {category}
             </span>
           </Category>
-          <Title style={{ fontSize: '2rem', color: '#0d7377' }}>{title}</Title>
+          <Title>
+            <span>{title}</span>
+          </Title>
           <Date style={{ lineHeight: '1' }}>{date}</Date>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </ContentWrapper>
