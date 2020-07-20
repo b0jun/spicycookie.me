@@ -39,6 +39,8 @@ const Category = styled(Link)`
   }
 `;
 const Date = styled.p`
+  margin: 0;
+  padding-right: 0.5rem;
   text-align: right;
   color: ${props => props.theme.palette.profileDesc};
 `;
@@ -64,7 +66,7 @@ export default ({ data }) => {
               {category}
             </span>
           </Category>
-          <Title style={{ fontSize: '4rem', lineHeight: '1.5' }}>{title}</Title>
+          <Title style={{ fontSize: '2rem', color: '#0d7377' }}>{title}</Title>
           <Date style={{ lineHeight: '1' }}>{date}</Date>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </ContentWrapper>
