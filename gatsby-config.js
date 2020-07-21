@@ -39,5 +39,18 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {},
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `spicy cookie tech blog`,
+        short_name: `spicycookie`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        display: `minimal-ui`,
+        icon: `static/images/svg/logo.svg`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };
