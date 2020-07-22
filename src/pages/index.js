@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 
 const IndexPage = ({ data, location: { pathname } }) => {
   const posts = data.allMarkdownRemark.edges;
-  const decodePathname = decodeURI(pathname).replace(/(\s)|(-)/gi, '');
+  const decodePathname = decodeURI(pathname);
   return (
     <Layout>
       <Category pathname={pathname} posts={posts} />
@@ -15,11 +15,7 @@ const IndexPage = ({ data, location: { pathname } }) => {
             return <PostCard key={node.fields.slug} post={node} />;
           })
         : posts
-            .filter(
-              ({ node }) =>
-                decodePathname.indexOf(`${node.frontmatter.category.replace(/(\s)|(-)/gi, '')}`) !==
-                -1,
-            )
+            .filter(({ node }) => decodePathname.indexOf(`${node.frontmatter.category}`) !== -1)
             .map(({ node }) => <PostCard key={node.fields.slug} post={node} />)}
     </Layout>
   );
@@ -46,7 +42,7 @@ export const query = graphql`
             private
             cover {
               childImageSharp {
-                fluid(maxWidth: 500) {
+                fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid
                 }
               }

@@ -1,6 +1,5 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const _ = require('lodash');
 
 /* Creating slugs */
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -58,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
   posts.forEach(function (post) {
     createPage({
-      path: `/category/${_.kebabCase(post.node.frontmatter.category)}`,
+      path: `/category/${post.node.frontmatter.category}`,
       component: path.resolve(`./src/pages/index.js`),
       context: {
         category: post.node.frontmatter.category,

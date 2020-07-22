@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import githubStyles from '../lib/styles/githubStyles';
-import _ from 'lodash';
 import { FaTag, FaArrowLeft } from 'react-icons/fa';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 import { Seo } from '../components/Seo';
@@ -85,7 +84,7 @@ export default ({ data }) => {
   deckDeckGoHighlightElement();
   const { html } = data.markdownRemark;
   const { title, date, category } = data.markdownRemark.frontmatter;
-  const categoryLink = _.kebabCase(category);
+
   return (
     <Layout>
       <Seo title={title} description={data.markdownRemark.excerpt} />
@@ -94,7 +93,7 @@ export default ({ data }) => {
         <ContentWrapper>
           <Wrapper>
             <TopContent>
-              <Category to={`/category/${categoryLink}`}>
+              <Category to={`/category/${category}`}>
                 <span>
                   <FaTag size={13} style={{ marginRight: '8px' }} />
                   {category}

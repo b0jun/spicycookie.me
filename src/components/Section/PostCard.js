@@ -45,17 +45,17 @@ const Name = styled.span`
   padding: 3px 10px;
   border-radius: 15px;
   ${props => {
-    if (props.category === 'category1') {
+    if (props.category === 'testA') {
       return css`
         background: ${props => props.theme.palette.brightRed};
       `;
     }
-    if (props.category === 'category2') {
+    if (props.category === 'testB') {
       return css`
         background: ${props => props.theme.palette.brightBlue};
       `;
     }
-    if (props.category === '웹 개발') {
+    if (props.category === 'testC') {
       return css`
         background: ${props => props.theme.palette.brightGreen};
       `;

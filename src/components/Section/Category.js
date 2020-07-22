@@ -81,10 +81,8 @@ const CategoryTitle = styled.div`
 `;
 
 const Category = ({ pathname, posts }) => {
-  const convertPathname = decodeURI(pathname)
-    .replace(/(\s)|(-)/gi, ' ')
-    .split('/')[2];
-  const categories = _.uniq(posts.map(({ node }) => _.kebabCase(node.frontmatter.category)));
+  const convertPathname = decodeURI(pathname).split('/')[2];
+  const categories = _.uniq(posts.map(({ node }) => node.frontmatter.category));
   return (
     <Block>
       <Seo title={convertPathname || 'Home'} />
@@ -104,7 +102,7 @@ const Category = ({ pathname, posts }) => {
           >
             <div>
               <FaTag size={11} style={{ marginRight: '6px' }} />
-              {category.replace(/(\s)|(-)/gi, ' ')}
+              {category}
             </div>
           </Item>
         ))}
