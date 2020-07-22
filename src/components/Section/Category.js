@@ -5,8 +5,6 @@ import { FaTag } from 'react-icons/fa';
 import { FaBookOpen } from 'react-icons/fa';
 import { Seo } from '../Seo';
 
-const _ = require('lodash');
-
 const shake = keyframes`{
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -80,9 +78,8 @@ const CategoryTitle = styled.div`
   color: ${props => props.theme.palette.mainFont};
 `;
 
-const Category = ({ pathname, posts }) => {
+const Category = ({ pathname, categories }) => {
   const convertPathname = decodeURI(pathname).split('/')[2];
-  const categories = _.uniq(posts.map(({ node }) => node.frontmatter.category));
   return (
     <Block>
       <Seo title={convertPathname || 'Home'} />
@@ -96,13 +93,12 @@ const Category = ({ pathname, posts }) => {
         {categories.map((category, idx) => (
           <Item
             key={idx}
-            to={`/category/${category}`}
-            category={category}
-            current={decodeURI(pathname) === `/category/${category}` ? 1 : 0}
+            to={`/category/${category.name}`}
+            current={decodeURI(pathname) === `/category/${category.name}` ? 1 : 0}
           >
             <div>
               <FaTag size={11} style={{ marginRight: '6px' }} />
-              {category}
+              {category.name}
             </div>
           </Item>
         ))}

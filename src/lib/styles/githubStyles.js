@@ -65,7 +65,6 @@ const githubStyles = css`
     margin-top: 0;
     padding-top: 0;
   }
-
   h1:hover a.anchor,
   h2:hover a.anchor,
   h3:hover a.anchor,

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -44,27 +44,7 @@ const Name = styled.span`
   box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   padding: 3px 10px;
   border-radius: 15px;
-  ${props => {
-    if (props.category === 'testA') {
-      return css`
-        background: ${props => props.theme.palette.brightRed};
-      `;
-    }
-    if (props.category === 'testB') {
-      return css`
-        background: ${props => props.theme.palette.brightBlue};
-      `;
-    }
-    if (props.category === 'testC') {
-      return css`
-        background: ${props => props.theme.palette.brightGreen};
-      `;
-    }
-    /* [category]: 색 설정 시 해당 카테고리 명으로 추가 */
-    return css`
-      background: ${props => props.theme.palette.mainFont};
-    `;
-  }};
+  background: ${props => (props.labelColor ? props.labelColor : 'white')};
 `;
 const Cover = styled.div`
   box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
@@ -74,7 +54,6 @@ const Cover = styled.div`
   img {
     border-radius: 20px;
   }
-  /* Img의 부모스타일 요소에 접근은 class 요소를 통해서 밖에없는가?? */
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
@@ -168,10 +147,16 @@ const PostWrapper = styled.div`
     }
   }
 `;
-const PostCard = ({ post }) => {
+const PostCard = ({ post, categories }) => {
   const { title, date, category } = post.frontmatter;
   const { excerpt } = post;
   const cover = post.frontmatter.cover.childImageSharp.fluid;
+  let labelColor; // set Label Color
+  categories.forEach(el => {
+    if (el.name === category) {
+      labelColor = el.color;
+    }
+  });
   return (
     <Block>
       <Link to={post.fields.slug}>
@@ -184,7 +169,7 @@ const PostCard = ({ post }) => {
             <Date>{date}</Date>
             <Description>{excerpt}</Description>
             <Label>
-              <Name category={category}>{category}</Name>
+              <Name labelColor={labelColor}>{category}</Name>
             </Label>
           </Info>
         </PostWrapper>

@@ -91,7 +91,6 @@ const Item = styled.a`
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
-    /* animation-iteration-count: infinite; */
   }
   :first-child {
     background: linear-gradient(to bottom right, #5e5aec, #3f9efc);
