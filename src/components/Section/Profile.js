@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import logo from '../../../static/images/svg/logo.svg';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdAssignmentInd, MdEmail } from 'react-icons/md';
+import { StaticQuery } from 'gatsby';
 
 const shake = keyframes`{
   10%, 90% {
@@ -132,48 +133,74 @@ const Wrapper = styled.div`
     }
   }
 `;
+
 // Tabnabbing Attack Avoid: https://html.spec.whatwg.org/multipage/links.html#link-type-noopener
 const Profile = () => {
   return (
-    <ProfileBlock>
-      <Wrapper>
-        <BlockOne>
-          <Header>
-            <img src={logo} alt="logo" />
-            <h1>Byeong Jun, Kim</h1>
-            <p>Web Developer</p>
-          </Header>
-          <Section>
-            <p>안녕하세요. 저는 웹 개발자입니다.</p>
-          </Section>
-        </BlockOne>
-        <BlockTwo>
-          <Footer>
-            <Item href={`/`} onClick={() => alert('페이지 준비중입니다.')}>
-              <MdAssignmentInd size={34} color={'#f4f6ff'} />
-            </Item>
-            <Item
-              href={`https://github.com/billowycloud`}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <FaGithub size={34} color={'#f4f6ff'} />
-            </Item>
-            <Item
-              href={`https://www.instagram.com/billowy_clouds`}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <FaInstagram size={34} color={'#f4f6ff'} />
-            </Item>
-            <Item href={`mailto:bjkim0228@naver.com`}>
-              <MdEmail size={34} color={'#f4f6ff'} />
-            </Item>
-          </Footer>
-        </BlockTwo>
-      </Wrapper>
-    </ProfileBlock>
+    <StaticQuery
+      query={profileQuery}
+      render={data => {
+        const { author, email, social, description, occupation } = data.site.siteMetadata;
+        return (
+          <ProfileBlock>
+            <Wrapper>
+              <BlockOne>
+                <Header>
+                  <img src={logo} alt="logo" />
+                  <h1>{author}</h1>
+                  <p>{occupation}</p>
+                </Header>
+                <Section>
+                  <p>{description}</p>
+                </Section>
+              </BlockOne>
+              <BlockTwo>
+                <Footer>
+                  <Item href={`/`} onClick={() => alert('페이지 준비중입니다.')}>
+                    <MdAssignmentInd size={34} color={'#f4f6ff'} />
+                  </Item>
+                  <Item
+                    href={`https://github.com/${social.github}`}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    <FaGithub size={34} color={'#f4f6ff'} />
+                  </Item>
+                  <Item
+                    href={`https://www.instagram.com/${social.instagram}`}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    <FaInstagram size={34} color={'#f4f6ff'} />
+                  </Item>
+                  <Item href={`mailto:${email}`}>
+                    <MdEmail size={34} color={'#f4f6ff'} />
+                  </Item>
+                </Footer>
+              </BlockTwo>
+            </Wrapper>
+          </ProfileBlock>
+        );
+      }}
+    />
   );
 };
 
 export default Profile;
+
+const profileQuery = graphql`
+  query DefaultProfileQuery {
+    site {
+      siteMetadata {
+        description
+        author
+        occupation
+        email
+        social {
+          github
+          instagram
+        }
+      }
+    }
+  }
+`;

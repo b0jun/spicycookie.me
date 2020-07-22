@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 import { FaTag } from 'react-icons/fa';
 import { FaBookOpen } from 'react-icons/fa';
+import { Seo } from '../Seo';
 
 const _ = require('lodash');
 
@@ -86,6 +87,7 @@ const Category = ({ pathname, posts }) => {
   const categories = _.uniq(posts.map(({ node }) => _.kebabCase(node.frontmatter.category)));
   return (
     <Block>
+      <Seo title={convertPathname || 'Home'} />
       <List>
         <Item to="/" current={pathname === '/' ? 1 : 0}>
           <div>

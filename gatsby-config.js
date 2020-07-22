@@ -1,8 +1,7 @@
+const metaData = require('./gatsby-metadata');
+
 module.exports = {
-  siteMetadata: {
-    title: 'Spicy Cookie Tech Blog',
-    author: 'Byeong Jun, Kim',
-  },
+  siteMetadata: metaData,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,15 +41,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `spicy cookie tech blog`,
-        short_name: `spicycookie`,
+        name: metaData.title,
+        short_name: metaData.title,
         start_url: `/`,
         background_color: `#6b37bf`,
         theme_color: `#6b37bf`,
         display: `minimal-ui`,
-        icon: `static/images/svg/logo.svg`,
+        icon: metaData.icon,
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
   ],
 };

@@ -6,6 +6,7 @@ import githubStyles from '../lib/styles/githubStyles';
 import _ from 'lodash';
 import { FaTag, FaArrowLeft } from 'react-icons/fa';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+import { Seo } from '../components/Seo';
 
 const Block = styled.div`
   ${githubStyles}
@@ -87,6 +88,7 @@ export default ({ data }) => {
   const categoryLink = _.kebabCase(category);
   return (
     <Layout>
+      <Seo title={title} description={data.markdownRemark.excerpt} />
       <Block>
         <Header />
         <ContentWrapper>
@@ -121,6 +123,7 @@ export const query = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      excerpt(pruneLength: 280)
       html
       frontmatter {
         title
