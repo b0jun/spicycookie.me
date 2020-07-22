@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import logo from '../../../static/images/svg/logo.svg';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdAssignmentInd, MdEmail } from 'react-icons/md';
-import { StaticQuery } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 const shake = keyframes`{
   10%, 90% {
