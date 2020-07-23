@@ -1,7 +1,7 @@
 ---
 title: 'ko_마크다운'
 date: '2020-07-16'
-category: 'testA'
+category: 'testC'
 cover: '../images/markdown.jpg'
 private: false
 ---

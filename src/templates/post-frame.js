@@ -1,16 +1,19 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import githubStyles from '../lib/styles/githubStyles';
 import { FaTag, FaArrowLeft } from 'react-icons/fa';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 import { Seo } from '../components/Seo';
+import Navigator from '../components/Post/Navigator';
+import Button from '../components/common/Button';
 
-const Block = styled.div`
+const MarkDown = styled.div`
   ${githubStyles}
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 `;
-
 const ContentWrapper = styled.div`
   background: #f5f5f5;
   border-bottom-left-radius: 20px;
@@ -20,35 +23,19 @@ const ContentWrapper = styled.div`
     padding: 30px ${props => props.theme.sideSpace.contentSmall};
   }
 `;
-
 const Title = styled.h1`
-  border-bottom: 1px solid ${props => props.theme.palette.profileDesc};
-  span {
-    font-size: 2.2rem;
-    font-weight: bolder;
-    color: #0d7377;
-    @media screen and (max-width: ${props => props.theme.responsive.largest}) {
-      font-size: 1.9rem;
-    }
-  }
-`;
-const Category = styled(Link)`
-  span {
-    transition: background 300ms;
-    font-weight: 500;
-    border-radius: 20px;
-    border: 2px solid ${props => props.theme.palette.brightGreen2};
-    padding: 7px 12px;
-    color: ${props => props.theme.palette.brightGreen2};
-    transform: color 10ms ease-in;
-    &:hover {
-      background: ${props => props.theme.palette.brightGreen2};
-      color: ${props => props.theme.palette.mainFont};
-    }
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  color: ${props => props.theme.palette.brightBlue1};
+  @media screen and (max-width: ${props => props.theme.responsive.largest}) {
+    font-size: 1.9rem;
   }
 `;
 const Date = styled.p`
   font-style: italic;
+  margin-top: 0.5rem;
   padding-right: 0.5rem;
   text-align: right;
   color: ${props => props.theme.palette.profileDesc};
@@ -56,31 +43,43 @@ const Date = styled.p`
 const Header = styled.div`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: ${props => props.theme.palette.brightBlue2};
+  background: ${props => props.theme.palette.brightBlue3};
   min-height: 200px;
 `;
-const TopContent = styled.div`
+const ButtonBlock = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const BackBtn = styled(Link)`
-  span {
-    transition: background 300ms;
-    border-radius: 20px;
-    border: 2px solid ${props => props.theme.palette.mainBackground};
-    padding: 7px 12px;
-    color: ${props => props.theme.palette.mainBackground};
+const StyledButton = styled(Button)`
+  &:nth-child(1) {
+    color: ${props => props.theme.palette.brightBlue1};
+    border: 2px solid ${props => props.theme.palette.brightBlue1};
     &:hover {
-      background: ${props => props.theme.palette.mainBackground};
       color: ${props => props.theme.palette.mainFont};
+      background: ${props => props.theme.palette.brightBlue1};
+    }
+  }
+  &:nth-child(2) {
+    color: ${props => props.theme.palette.brightGreen2};
+    border: 2px solid ${props => props.theme.palette.brightGreen2};
+    &:hover {
+      color: ${props => props.theme.palette.mainFont};
+      background: ${props => props.theme.palette.brightGreen2};
     }
   }
 `;
-const Wrapper = styled.div`
-  margin-bottom: 3rem;
+const Line = styled.div`
+  width: 90%;
+  height: 4px;
+  background: linear-gradient(
+    92deg,
+    ${props => props.theme.palette.brightBlue2},
+    ${props => props.theme.palette.brightBlue3},
+    ${props => props.theme.palette.brightGreen3}
+  );
+  margin: 0 auto;
 `;
-
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   deckDeckGoHighlightElement();
   const { html } = data.markdownRemark;
   const { title, date, category } = data.markdownRemark.frontmatter;
@@ -88,32 +87,27 @@ export default ({ data }) => {
   return (
     <Layout>
       <Seo title={title} description={data.markdownRemark.excerpt} />
-      <Block>
-        <Header />
-        <ContentWrapper>
-          <Wrapper>
-            <TopContent>
-              <Category to={`/category/${category}`}>
-                <span>
-                  <FaTag size={13} style={{ marginRight: '8px' }} />
-                  {category}
-                </span>
-              </Category>
-              <BackBtn to="/">
-                <span>
-                  <FaArrowLeft size={12} style={{ marginRight: '8px' }} />
-                  Back to Blog
-                </span>
-              </BackBtn>
-            </TopContent>
-            <Title style={{ marginTop: '1.7rem' }}>
-              <span>{title}</span>
-            </Title>
-            <Date style={{ lineHeight: '1' }}>{date}</Date>
-          </Wrapper>
+      <Header />
+      <ContentWrapper>
+        <ButtonBlock>
+          <StyledButton to={`/category/${category}`}>
+            <FaTag size={13} style={{ marginRight: '8px' }} />
+            {category}
+          </StyledButton>
+          <StyledButton to="/">
+            <FaArrowLeft size={12} style={{ marginRight: '8px' }} />
+            Back to Blog
+          </StyledButton>
+        </ButtonBlock>
+        <Title>{title}</Title>
+        <Line />
+        <Date>{date}</Date>
+        <MarkDown>
           <div dangerouslySetInnerHTML={{ __html: html }} />
-        </ContentWrapper>
-      </Block>
+        </MarkDown>
+        <Line />
+        <Navigator pageContext={pageContext} />
+      </ContentWrapper>
     </Layout>
   );
 };

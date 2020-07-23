@@ -1,7 +1,7 @@
 ---
 title: 'Test2'
-date: '2020-07-03'
-category: 'testB'
+date: '2020-07-05'
+category: 'testA'
 cover: '../images/default.jpg'
 private: false
 ---

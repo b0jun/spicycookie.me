@@ -10,6 +10,7 @@ import Profile from './Section/Profile';
 import { globalHistory as history } from '@reach/router';
 
 const ContentBlock = styled.div`
+  min-height: 85vh;
   margin-top: 2rem;
   display: flex;
   align-items: flex-start;

@@ -321,7 +321,8 @@ const githubStyles = css`
   blockquote {
     border-left: 4px solid #30e3ca;
     padding: 0 15px;
-    color: #777777;
+    color: #282c35;
+    background: #f5f6fa;
   }
 
   blockquote > :first-child {
