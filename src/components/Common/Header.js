@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContentWrapper from './ContentWrapper';
-import titlefont from '../../static/images/svg/titlefont.svg';
-import logo from '../../static/images/svg/logo.svg';
+import titlefont from '../../../static/images/svg/titlefont.svg';
+import logo from '../../../static/images/svg/logo.svg';
 import { Link } from 'gatsby';
 
 const HeaderBlock = styled.div`

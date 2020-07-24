@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/Common/Layout';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import githubStyles from '../lib/styles/githubStyles';
@@ -7,7 +7,7 @@ import { FaTag, FaArrowLeft } from 'react-icons/fa';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 import { Seo } from '../components/Seo';
 import Navigator from '../components/Post/Navigator';
-import Button from '../components/common/Button';
+import Button from '../components/Common/Button';
 
 const MarkDown = styled.div`
   ${githubStyles}
