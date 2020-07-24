@@ -5,9 +5,10 @@ import styled from 'styled-components';
 import githubStyles from '../lib/styles/githubStyles';
 import { FaTag, FaArrowLeft } from 'react-icons/fa';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-import { Seo } from '../components/Seo';
+import { Seo } from '../components/Service/Seo';
 import Navigator from '../components/Post/Navigator';
 import Button from '../components/Common/Button';
+import Utterances from '../components/Service/Utterances';
 
 const MarkDown = styled.div`
   ${githubStyles}
@@ -82,8 +83,8 @@ const Line = styled.div`
 export default ({ data, pageContext }) => {
   deckDeckGoHighlightElement();
   const { html } = data.markdownRemark;
+  const repo = data.site.siteMetadata.utterancesRepo;
   const { title, date, category } = data.markdownRemark.frontmatter;
-
   return (
     <Layout>
       <Seo title={title} description={data.markdownRemark.excerpt} />
@@ -107,6 +108,7 @@ export default ({ data, pageContext }) => {
         </MarkDown>
         <Line />
         <Navigator pageContext={pageContext} />
+        <Utterances repo={repo} />
       </ContentWrapper>
     </Layout>
   );
@@ -114,6 +116,11 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        utterancesRepo
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 280)

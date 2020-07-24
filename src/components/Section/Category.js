@@ -3,7 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 import { FaTag } from 'react-icons/fa';
 import { FaBookOpen } from 'react-icons/fa';
-import { Seo } from '../Seo';
+import { Seo } from '../Service/Seo';
 
 const shake = keyframes`{
   10%, 90% {

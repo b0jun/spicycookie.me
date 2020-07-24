@@ -10,6 +10,7 @@ module.exports = {
     github: `billowycloud`,
   },
   icon: `static/images/svg/logo.svg`,
+  utterancesRepo: `billowycloud/SpicyCookie.io`,
   categories: [
     {
       name: 'testA',
