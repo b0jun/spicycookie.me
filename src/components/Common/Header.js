@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContentWrapper from './ContentWrapper';
-import titlefont from '../../../static/images/svg/titlefont.svg';
 import logo from '../../../static/images/svg/logo.svg';
 import { Link } from 'gatsby';
+import '../../lib/fonts/fonts.css';
 
 const HeaderBlock = styled.div`
   background: ${props => props.theme.palette.headerBackground};
@@ -19,11 +19,20 @@ const HeaderInner = styled.div`
     justify-content: center;
   }
 `;
+const SLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Title = styled.div`
+  font-family: 'Bangers', cursive;
+  font-size: 2.5rem;
+  color: #eee;
+  text-shadow: 2px 3px 1px ${props => props.theme.palette.shadow};
+  margin-right: 0.3rem;
+`;
 const Img = styled.img`
   height: 50px;
-  &:first-child {
-    height: 40px;
-  }
 `;
 
 const Header = () => {
@@ -31,10 +40,10 @@ const Header = () => {
     <HeaderBlock>
       <ContentWrapper>
         <HeaderInner>
-          <Link to="/">
-            <Img src={titlefont} />
-            <Img src={logo} />
-          </Link>
+          <SLink to="/">
+            <Title>SpicyCookie</Title>
+            <Img src={logo} alt="logo" />
+          </SLink>
         </HeaderInner>
       </ContentWrapper>
     </HeaderBlock>

@@ -9,7 +9,7 @@ module.exports = {
     instagram: `billowy_clouds`,
     github: `billowycloud`,
   },
-  icon: `static/images/svg/logo.svg`,
+  icon: `content/assets/logo.svg`,
   utterancesRepo: `billowycloud/SpicyCookie.io`,
   categories: [
     {

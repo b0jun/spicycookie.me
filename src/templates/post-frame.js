@@ -9,7 +9,7 @@ import { Seo } from '../components/Service/Seo';
 import Navigator from '../components/Post/Navigator';
 import Button from '../components/Common/Button';
 import Utterances from '../components/Service/Utterances';
-
+import logo from '../../static/images/svg/logo.svg';
 const MarkDown = styled.div`
   ${githubStyles}
   margin-top: 4rem;
@@ -46,6 +46,9 @@ const Header = styled.div`
   border-top-right-radius: 20px;
   background: ${props => props.theme.palette.brightBlue3};
   min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const ButtonBlock = styled.div`
   display: flex;
@@ -88,7 +91,9 @@ export default ({ data, pageContext }) => {
   return (
     <Layout>
       <Seo title={title} description={data.markdownRemark.excerpt} />
-      <Header />
+      <Header>
+        <img src={logo} style={{ width: '100px', height: '100px' }} alt="" />
+      </Header>
       <ContentWrapper>
         <ButtonBlock>
           <StyledButton to={`/category/${category}`}>

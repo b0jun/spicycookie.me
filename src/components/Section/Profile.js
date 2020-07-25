@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import logo from '../../../static/images/svg/logo.svg';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdAssignmentInd, MdEmail } from 'react-icons/md';
 import { StaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 const shake = keyframes`{
   10%, 90% {
@@ -40,32 +40,8 @@ const ProfileBlock = styled.div`
   text-align: center;
 `;
 
-const Header = styled.div`
+const Info = styled.div`
   margin-bottom: 1rem;
-  img {
-    background: white;
-    width: 120px;
-    height: 116px;
-    border-radius: 100%;
-    margin-bottom: 1.5rem;
-    box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
-  }
-  h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: ${props => props.theme.palette.mainFont};
-    margin-bottom: 1rem;
-  }
-  p {
-    color: ${props => props.theme.palette.profileJob};
-  }
-`;
-const Section = styled.div`
-  margin-bottom: 1rem;
-  p {
-    font-size: 0.8rem;
-    color: ${props => props.theme.palette.profileDesc};
-  }
 `;
 
 const Footer = styled.div`
@@ -112,13 +88,15 @@ const Wrapper = styled.div`
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     display: flex;
     justify-content: center;
+    align-items: center;
     ${BlockOne} {
+      max-width: 220px;
       border-right: 1px solid ${props => props.theme.palette.profileJob};
-      padding-right: 3rem;
-      margin-right: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
     ${BlockTwo} {
-      display: flex;
+      margin-left: 2rem;
     }
     ${Footer} {
       border-top: 0;
@@ -132,7 +110,31 @@ const Wrapper = styled.div`
     }
   }
 `;
-
+const InfoItem = styled.div`
+  word-wrap: break-word;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  img {
+    background: #eee;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 1px 3px 4px ${props => props.theme.palette.shadow};
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: ${props => props.theme.palette.mainFont};
+  }
+  h3 {
+    color: ${props => props.theme.palette.profileJob};
+  }
+  p {
+    font-size: 0.8rem;
+    color: ${props => props.theme.palette.profileDesc};
+  }
+`;
 // Tabnabbing Attack Avoid: https://html.spec.whatwg.org/multipage/links.html#link-type-noopener
 const Profile = () => {
   return (
@@ -144,14 +146,20 @@ const Profile = () => {
           <ProfileBlock>
             <Wrapper>
               <BlockOne>
-                <Header>
-                  <img src={logo} alt="logo" />
-                  <h1>{author}</h1>
-                  <p>{occupation}</p>
-                </Header>
-                <Section>
-                  <p>{description}</p>
-                </Section>
+                <Info>
+                  <InfoItem>
+                    <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
+                  </InfoItem>
+                  <InfoItem>
+                    <h1>{author}</h1>
+                  </InfoItem>
+                  <InfoItem>
+                    <h3>{occupation}</h3>
+                  </InfoItem>
+                  <InfoItem>
+                    <p>{description}</p>
+                  </InfoItem>
+                </Info>
               </BlockOne>
               <BlockTwo>
                 <Footer>
@@ -189,6 +197,13 @@ export default Profile;
 
 const profileQuery = graphql`
   query DefaultProfileQuery {
+    avatar: file(absolutePath: { regex: "/profile.png/" }) {
+      childImageSharp {
+        fixed(width: 100, height: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         description
