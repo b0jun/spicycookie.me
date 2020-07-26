@@ -112,6 +112,7 @@ const Wrapper = styled.div`
 `;
 const InfoItem = styled.div`
   word-wrap: break-word;
+  font-family: 'Roboto', sans-serif;
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
