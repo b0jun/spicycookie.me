@@ -10,7 +10,6 @@ import Profile from '../Section/Profile';
 import { globalHistory as history } from '@reach/router';
 
 const ContentBlock = styled.div`
-  min-height: 85vh;
   margin-top: 2rem;
   display: flex;
   align-items: flex-start;
@@ -24,6 +23,7 @@ const ContentBlock = styled.div`
   }
 `;
 const MainWrapper = styled.div`
+  min-height: 85vh;
   width: calc(100% - ${props => props.theme.sizes.profileWidth} - 40px);
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     width: 100%;

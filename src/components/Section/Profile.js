@@ -38,6 +38,8 @@ const ProfileBlock = styled.div`
     margin-bottom: 1rem;
   }
   text-align: center;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+  }
 `;
 
 const Info = styled.div`
@@ -134,6 +136,14 @@ const InfoItem = styled.div`
   p {
     font-size: 0.8rem;
     color: ${props => props.theme.palette.profileDesc};
+  }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    h1 {
+      font-size: 1.2rem;
+    }
+    h3 {
+      font-size: 0.9rem;
+    }
   }
 `;
 // Tabnabbing Attack Avoid: https://html.spec.whatwg.org/multipage/links.html#link-type-noopener
