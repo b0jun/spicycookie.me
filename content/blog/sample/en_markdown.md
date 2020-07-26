@@ -1,7 +1,7 @@
 ---
-title: 'en_markdown'
+title: 'sample'
 date: '2020-07-17'
-category: 'testC'
+category: 'sample'
 cover: '../images/markdown.jpg'
 private: false
 ---

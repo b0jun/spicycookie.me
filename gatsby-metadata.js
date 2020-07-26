@@ -12,20 +12,20 @@ module.exports = {
   icon: `content/assets/logo.svg`,
   utterancesRepo: `billowycloud/SpicyCookie.io`,
   categories: [
+    // {
+    //   name: 'JavaScript',
+    //   color: '#f38181',
+    // },
     {
-      name: 'testA',
-      color: '#f38181',
-    },
-    {
-      name: 'testB',
+      name: '자료구조',
       color: '#a8d8ea',
     },
+    // {
+    //   name: '알고리즘',
+    //   color: '#a8e6cf',
+    // },
     {
-      name: 'testC',
-      color: '#a8e6cf',
-    },
-    {
-      name: 'privateTest',
+      name: 'sample',
       color: '#bfd4fe',
     },
   ],
