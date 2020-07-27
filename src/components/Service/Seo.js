@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-export function Seo({ description, title, siteUrl, author, lang, meta }) {
+export function Seo({ description, title, siteUrl, author, lang, meta, coverSrc }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -34,7 +34,7 @@ export function Seo({ description, title, siteUrl, author, lang, meta }) {
               },
               {
                 property: `og:image`,
-                content: `${metaSiteUrl}/images/svg/logo.svg`,
+                content: coverSrc,
               },
               {
                 property: `og:type`,
@@ -59,6 +59,10 @@ export function Seo({ description, title, siteUrl, author, lang, meta }) {
               {
                 name: `twitter:description`,
                 content: metaDescription,
+              },
+              {
+                name: `twitter:image`,
+                content: coverSrc,
               },
             ].concat(meta)}
           />

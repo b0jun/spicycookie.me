@@ -87,10 +87,12 @@ export default ({ data, pageContext }) => {
   deckDeckGoHighlightElement();
   const { html } = data.markdownRemark;
   const repo = data.site.siteMetadata.utterancesRepo;
-  const { title, date, category } = data.markdownRemark.frontmatter;
+  const { siteUrl } = data.site.siteMetadata;
+  const { title, date, category, cover } = data.markdownRemark.frontmatter;
+  const coverSrc = cover ? `${siteUrl}${cover.childImageSharp.fluid.src}` : undefined;
   return (
     <Layout>
-      <Seo title={title} description={data.markdownRemark.excerpt} />
+      <Seo title={title} description={data.markdownRemark.excerpt} coverSrc={coverSrc} />
       <Header>
         <img src={logo} style={{ width: '100px', height: '100px' }} alt="" />
       </Header>
@@ -124,6 +126,7 @@ export const query = graphql`
     site {
       siteMetadata {
         utterancesRepo
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -134,6 +137,13 @@ export const query = graphql`
         title
         date(formatString: "MMMM Do, YYYY")
         category
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              src
+            }
+          }
+        }
       }
     }
   }

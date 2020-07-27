@@ -3,14 +3,14 @@ module.exports = {
   author: `Byeong Jun, Kim`,
   occupation: `Web Developer`,
   description: `Hello, I'm Web Developer.`,
-  siteUrl: `https://spicycookie.com`,
+  siteUrl: `https://spicycookie.me`,
   email: `bjkim0228@naver.com`,
   social: {
     instagram: `billowy_clouds`,
     github: `billowycloud`,
   },
   icon: `content/assets/logo.svg`,
-  utterancesRepo: `billowycloud/SpicyCookie.io`,
+  utterancesRepo: `billowycloud/spicycookie.me`,
   categories: [
     // {
     //   name: 'JavaScript',
