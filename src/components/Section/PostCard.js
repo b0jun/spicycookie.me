@@ -20,7 +20,7 @@ const Block = styled.div`
   }
 `;
 const Title = styled.h1`
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: ${props => props.theme.palette.mainFont};
   padding-bottom: 0.8rem;
 `;
@@ -28,7 +28,6 @@ const Description = styled.p`
   font-size: 0.9rem;
   color: ${props => props.theme.palette.description};
   padding-bottom: 1.3rem;
-  font-weight: 500;
   line-height: 1.2rem;
 `;
 const Date = styled.p`
@@ -62,7 +61,7 @@ const Cover = styled.div`
 const Info = styled.div`
   width: calc(100% - 180px);
   padding-left: 20px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +78,7 @@ const PostWrapper = styled.div`
       width: calc(100% - 170px);
     }
     ${Title} {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
     ${Description} {
       font-size: 0.8rem;
@@ -94,7 +93,6 @@ const PostWrapper = styled.div`
       width: calc(100% - 160px);
     }
     ${Title} {
-      font-size: 1.2rem;
       padding-bottom: 0.8rem;
     }
     ${Date} {

@@ -2,7 +2,6 @@ import { css } from 'styled-components';
 
 const githubStyles = css`
   body {
-    font-family: Helvetica, arial, sans-serif;
     font-size: 14px;
     line-height: 1.6;
     padding-top: 10px;
@@ -46,6 +45,7 @@ const githubStyles = css`
   h4,
   h5,
   h6 {
+    font-family: Helvetica, arial, sans-serif;
     margin: 20px 0 10px;
     padding: 0;
     font-weight: bold;
@@ -206,8 +206,8 @@ const githubStyles = css`
   ol,
   dl,
   li,
-  table,
-  pre {
+  table {
+    font-family: medium-content-serif-font, Georgia, Cambria, 'Times New Roman', Times, serif;
     margin: 15px 0;
     line-height: 1.7;
   }
@@ -475,6 +475,8 @@ const githubStyles = css`
   }
 
   pre code {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
     white-space: pre;
@@ -500,6 +502,7 @@ const githubStyles = css`
     overflow: auto;
     padding: 6px 10px;
     border-radius: 10px;
+    margin: 15px 0;
   }
 
   pre code,

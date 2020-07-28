@@ -4,7 +4,7 @@ import '../fonts/fonts.css';
 const GlobalStyle = createGlobalStyle`
 	${reset}
 	body {
-		font-family: 'Noto Sans KR', sans-serif;
+		font-family: 'Recursive', 'Noto Sans KR', sans-serif;
 		background: ${props => props.theme.palette.mainBackground};
 	}
 	a{

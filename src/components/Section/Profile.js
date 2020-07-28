@@ -24,6 +24,7 @@ const shake = keyframes`{
 }`;
 
 const ProfileBlock = styled.div`
+  font-family: 'Roboto', sans-serif;
   position: -webkit-sticky;
   position: sticky;
   top: 4px;
@@ -114,7 +115,6 @@ const Wrapper = styled.div`
 `;
 const InfoItem = styled.div`
   word-wrap: break-word;
-  font-family: 'Roboto', sans-serif;
   &:not(:last-child) {
     margin-bottom: 1rem;
   }

@@ -74,7 +74,7 @@ const CategoryTitle = styled.div`
   border-bottom: 1px solid ${props => props.theme.palette.footerFont};
 
   font-size: 1.7rem;
-  font-weight: bold;
+  font-weight: 500;
   color: ${props => props.theme.palette.mainFont};
 `;
 
