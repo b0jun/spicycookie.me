@@ -513,7 +513,7 @@ const githubStyles = css`
   deckgo-highlight-code {
     line-height: 1.5;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
       font-size: 1rem;
     }

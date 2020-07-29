@@ -25,6 +25,7 @@ const Title = styled.h1`
   padding-bottom: 0.8rem;
 `;
 const Description = styled.p`
+  font-weight: 400;
   font-size: 0.9rem;
   color: ${props => props.theme.palette.description};
   padding-bottom: 1.3rem;

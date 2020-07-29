@@ -12,10 +12,10 @@ module.exports = {
   icon: `content/assets/logo.svg`,
   utterancesRepo: `billowycloud/spicycookie.me`,
   categories: [
-    // {
-    //   name: 'JavaScript',
-    //   color: '#f38181',
-    // },
+    {
+      name: 'JavaScript',
+      color: '#f38181',
+    },
     {
       name: '자료구조',
       color: '#a8d8ea',
