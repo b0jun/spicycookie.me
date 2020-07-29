@@ -5,3 +5,5 @@ category: 'JavaScript'
 cover: '../images/es6.png'
 private: false
 ---
+
+es6
