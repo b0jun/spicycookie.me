@@ -28,7 +28,7 @@ const Title = styled.h1`
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2.2rem;
-  font-weight: bolder;
+  font-weight: 900;
   color: ${props => props.theme.palette.brightBlue1};
   @media screen and (max-width: ${props => props.theme.responsive.largest}) {
     font-size: 1.9rem;

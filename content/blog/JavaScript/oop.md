@@ -2,11 +2,11 @@
 title: '[JS] Object-Oriented Programming'
 date: '2020-07-29'
 category: 'JavaScript'
-cover: '../images/default.jpg'
+cover: '../images/js.png'
 private: false
 ---
 
-## OOP(Object-Oriented Programming) ?
+# 🍪 OOP(Object-Oriented Programming) ?
 
 객체지향 프로그래밍은 기존의 프로그래밍언어와 다른 전혀 새로운 것이 아니라, 기존의 프로그래밍 언어에 몇 가지 새로운 규칙을 추가한 보다 발전된 형태이다. 이러한 규칙들을 이용해서 코드 간에 서로 관계를 맺어 줌으로써 보다 유기적으로 프로그램을 구성하는 것이 가능해졌다.
 
@@ -16,7 +16,7 @@ private: false
 2. 코드의 관리가 쉽다.
 3. 신뢰성이 높은 프로그래밍을 가능하게 한다.
 
-# ES6 이전의 OOP 구현
+# 🍪 ES6 이전의 OOP 구현
 
 ES6의 class키워드를 이용하면 쉽게 구현이 가능하다. 하지만, ES6 이전의 자바스크립트에서는 다른 언어에서 사용하는 동일한 개념의 `class`가 존재하지 않았다. 그러나 자바스크립트는 프로토타입 기반(prototype-based) 객체지향 언어로 클래스가 필요없이(class-free) 객체지향 프로그래밍 스타일로 프로토타입 체인과 클로저 등으로 객체 지향 언어의 상속, 캡슐화 등의 개념을 구현할 수 있다.
 
@@ -106,9 +106,9 @@ ES6의 class키워드를 이용하면 쉽게 구현이 가능하다. 하지만, 
 
 ### 2. 프로토타입 패턴 상속 (Prototypal Inheritance)
 
-프로토타입 패턴 상속은 Object.create 함수를 사용해서 객체에서 다른 객체로 직접 상속을 구현하는 방식이다. 의사 클래스 패턴의 단점인 new 연산자가 필요없으며, 생성자 링크도 파괴되지않고, 객체 리터럴에도 사용이 가능하다.
+프로토타입 패턴 상속은 `Object.create` 함수를 사용해서 객체에서 다른 객체로 직접 상속을 구현하는 방식이다. 의사 클래스 패턴의 단점인 new 연산자가 필요없으며, 생성자 링크도 파괴되지않고, 객체 리터럴에도 사용이 가능하다.
 
-> `Object.create 함수`는 지정된 프로토타입 객체 및 속성을 갖는 새 객체를 만든다. 즉, 매개견수에 프로토타입으로 설정할 객체 또는 인스턴스를 전달하고 이를 상속하는 새로운 객체를 생성한다.
+> `Object.create` 함수는 지정된 프로토타입 객체 및 속성을 갖는 새 객체를 만든다. 즉, 매개견수에 프로토타입으로 설정할 객체 또는 인스턴스를 전달하고 이를 상속하는 새로운 객체를 생성한다.
 
 Object.create 함수를 이용한 상속 패턴을 코드로 보자.
 
@@ -167,6 +167,68 @@ if (typeof Object.create != 'function') {
     }
 }
 ```
+
+### 3. 함수를 사용한 방식
+
+프로토타입 패턴 상속은 자바스크립트의 특성을 잘 반영한 방법이지만, 모든 속성이 `Private`을 가질 수 없어, 모두 `Public` 하다는 단점이 있다.
+
+함수를 사용한 방식은 함수객체에서 함수를 상속하는 방법입니다. 이는 프로토타입 패턴이 Private속성을 가질 수 없는 것에 대해 좀 더 나은 대안이다. 함수를 사용한 상속 구현 패턴은 다음과 같다.
+
+```
+var parent = fucntion(spec){
+
+  // ① 필요한 prviate 변수들
+  var that = {};
+
+  // ② 상속하려는 메소드를 추가합니다
+  that.get_name = function(){
+    return spec.name;     // <-- private 속성
+  }
+  that.get_ability = function(){
+    return spec.ability;  // <-- private 속성
+  }
+
+  // ③새로운 객체 반환
+  return that;
+};
+
+var myParent = parent({'name':'Bob', 'ability':'swimming'})
+console.log(myParent.get_name()); // "Bob"
+```
+
+부모를 정의하고 부모 메서드에 접근하기 위해서는 다음과 같이 하면된다.
+
+```
+var child = function(spec){
+  spec.ability = spec.ability || 'cooking';
+
+  //parent 생성자 호출
+  var that = parent(spec);
+
+  // parent로 부터 ability에 대한 호출 값을 가져와서 저장한다
+  super_get_ability = that.get_ability();
+
+  //get_ability 함수를 재정의 한다
+  that.get_ability = function(){
+    return 'new ability '+ super_get_ability
+  }
+  return that;
+}
+
+var myChild = child({'name': 'Jun'})
+console.log(myChild.get_name());    // "Jun"
+console.log(myChild.get_ability()); // "new ability cooking"
+```
+
+함수형 패턴을 이용하면서 얻는 이점은 다음과 같다.
+
+<pre>
+<code>
+1. 유연성이 좋다.
+2. 캡슐화와 정보은닉이 가능하다.
+3. super메서드에 접근할 수 있는 방법을 제공한다.
+</code>
+</pre>
 
 ## 🔍 Reference
 

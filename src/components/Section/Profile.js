@@ -127,7 +127,7 @@ const InfoItem = styled.div`
   }
   h1 {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     color: ${props => props.theme.palette.mainFont};
   }
   h3 {

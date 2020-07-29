@@ -45,10 +45,9 @@ const githubStyles = css`
   h4,
   h5,
   h6 {
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Do Hyeon', arial, sans-serif;
     margin: 20px 0 10px;
     padding: 0;
-    font-weight: bold;
     -webkit-font-smoothing: antialiased;
     cursor: text;
     position: relative;
@@ -117,7 +116,7 @@ const githubStyles = css`
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   h4 {
@@ -134,7 +133,7 @@ const githubStyles = css`
   }
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     h1 {
-      font-size: 26px;
+      font-size: 25px;
       color: black;
     }
 
@@ -145,7 +144,7 @@ const githubStyles = css`
     }
 
     h3 {
-      font-size: 17px;
+      font-size: 19px;
     }
 
     h4 {
@@ -163,7 +162,7 @@ const githubStyles = css`
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     h1 {
-      font-size: 24px;
+      font-size: 23px;
       color: black;
     }
 
@@ -174,7 +173,7 @@ const githubStyles = css`
     }
 
     h3 {
-      font-size: 16px;
+      font-size: 17px;
     }
 
     h4 {
@@ -207,7 +206,7 @@ const githubStyles = css`
   dl,
   li,
   table {
-    font-family: medium-content-serif-font, Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: 'Noto Serif KR', serif;
     margin: 15px 0;
     line-height: 1.7;
   }
@@ -467,7 +466,7 @@ const githubStyles = css`
   code,
   tt {
     margin: 0 2px;
-    padding: 0 8px;
+    padding: 2px 8px;
     white-space: nowrap;
     background-color: #ffe2e2;
     border-radius: 5px;
@@ -477,6 +476,7 @@ const githubStyles = css`
   pre code {
     font-family: 'Nanum Gothic Coding', monospace;
     font-size: 1rem;
+    line-height: 1.5rem;
     margin: 0;
     padding: 0;
     white-space: pre;
@@ -486,7 +486,6 @@ const githubStyles = css`
   }
 
   .highlight pre {
-    background-color: #f8f8f8;
     border: 1px solid #cccccc;
     font-size: 13px;
     line-height: 19px;
@@ -500,7 +499,7 @@ const githubStyles = css`
     font-size: 13px;
     line-height: 19px;
     overflow: auto;
-    padding: 6px 10px;
+    padding: 0 10px;
     border-radius: 10px;
     margin: 15px 0;
   }
