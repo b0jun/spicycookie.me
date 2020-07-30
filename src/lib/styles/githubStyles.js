@@ -200,7 +200,6 @@ const githubStyles = css`
     }
   }
   p,
-  blockquote,
   ul,
   ol,
   dl,
@@ -318,10 +317,16 @@ const githubStyles = css`
   }
 
   blockquote {
-    border-left: 4px solid #30e3ca;
+    border-left: 4px solid #3f87a6;
     padding: 0 15px;
     color: #282c35;
-    background: #f5f6fa;
+    background: #e4f0f5;
+    border-radius: 2px;
+    margin: 15px 0;
+    line-height: 1.7;
+  }
+  blockquote p {
+    font-family: 'IBM Plex Mono', 'Noto Serif KR', arial, sans-serif;
   }
 
   blockquote > :first-child {
@@ -465,6 +470,7 @@ const githubStyles = css`
 
   code,
   tt {
+    font-family: 'Do Hyeon';
     margin: 0 2px;
     padding: 2px 8px;
     white-space: nowrap;
@@ -474,7 +480,7 @@ const githubStyles = css`
   }
 
   pre code {
-    font-family: 'Nanum Gothic Coding', monospace;
+    font-family: 'Sunflower', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 0;
@@ -509,12 +515,16 @@ const githubStyles = css`
     background-color: transparent;
     border: none;
   }
+  /* Ref: https://docs.deckdeckgo.com/components/code/ */
   deckgo-highlight-code {
+    --deckgo-highlight-code-font-family: 'Anonymous Pro', 'Do Hyeon', sans-serif;
+    --deckgo-highlight-code-token-selector: #f67280;
+    --deckgo-highlight-code-font-size: 1rem;
+    --deckgo-highlight-code-white-space: pre;
     line-height: 1.5;
-    font-size: 1.2rem;
     margin-bottom: 3rem;
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
-      font-size: 1rem;
+      --deckgo-highlight-code-font-size: 0.9rem;
     }
   }
 `;

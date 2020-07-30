@@ -7,11 +7,15 @@
 /* Global Font [Kor] */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;900&display=swap');
 
-/* Markdown <code> Tag*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
-
 /* Markdown All Font */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
 
-/* Markdown h1~h6 Font*/
+/* Markdown h1~h6 Font, <code> Tag */
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+/* MarkDown <pre><code> */
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+
+/* deckgo highlight code Font*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');

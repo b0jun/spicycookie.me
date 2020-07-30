@@ -6,9 +6,11 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 const Block = styled.div`
   margin-top: 3rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 `;
 const Item = styled.div`
+  margin-bottom: 1.1rem;
   &:first-child {
     flex-grow: 1;
   }
@@ -35,8 +37,8 @@ export default ({ pageContext }) => {
         {previous !== null && (
           <StyledButton to={previous.fields.slug}>
             <FaChevronLeft size={9} style={{ marginRight: '6px' }} />
-            {previous.frontmatter.title.length > 12
-              ? `${previous.frontmatter.title.slice(0, 12)}...`
+            {previous.frontmatter.title.length > 30
+              ? `${previous.frontmatter.title.slice(0, 30)}...`
               : previous.frontmatter.title}
           </StyledButton>
         )}
@@ -44,8 +46,8 @@ export default ({ pageContext }) => {
       <Item>
         {next !== null && (
           <StyledButton to={next.fields.slug}>
-            {next.frontmatter.title.length > 12
-              ? `${next.frontmatter.title.slice(0, 12)}...`
+            {next.frontmatter.title.length > 30
+              ? `${next.frontmatter.title.slice(0, 30)}...`
               : next.frontmatter.title}
             <FaChevronRight size={9} style={{ marginLeft: '6px' }} />
           </StyledButton>

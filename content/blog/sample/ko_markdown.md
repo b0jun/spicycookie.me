@@ -365,20 +365,20 @@ __double underscores__
 ![Alt text](/path/to/img.jpg "Optional title")
 ```
 
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0)
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0 'RubberDuck')
+![라일레이 해변](https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1)
+![라일레이 해변](https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1)
 
 사이즈 조절 기능은 없기 때문에 `<img width="" height=""></img>`를 이용한다.
 
 예
 
 ```
-<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="railay"></img><br/>
+<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="railay"></img>
 ```
 
-<img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="40%" height="30%" title="%(비율) 크기 설정" alt="RubberDuck"></img>
+<img src="https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="railay"></img><br/>
+<img src="https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1" width="40%" height="30%" title="%(비율) 크기 설정" alt="railay"></img>
 
 ## 2.9. 줄바꿈
 
