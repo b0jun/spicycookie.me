@@ -3,7 +3,7 @@ title: 'Tree 자료구조 다루기'
 date: '2020-07-27'
 category: '자료구조'
 cover: '../images/tree.png'
-private: false
+private: true
 ---
 
 - 각 구성요소를 노드(node)라고 부름

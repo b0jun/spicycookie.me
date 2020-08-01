@@ -111,7 +111,7 @@ export default ({ data, pageContext }) => {
         <Line />
         <Date>{date}</Date>
         <MarkDown>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div id="markdown" dangerouslySetInnerHTML={{ __html: html }} />
         </MarkDown>
         <Line />
         <Navigator pageContext={pageContext} />

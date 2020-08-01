@@ -1,29 +1,16 @@
 import { css } from 'styled-components';
 
 const githubStyles = css`
-  body {
-    font-size: 14px;
+  /* markdown global body */
+  #markdown {
+    font-size: 16px;
     line-height: 1.6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: white;
-    padding: 30px;
-    color: #333;
+    font-family: 'RIDIBatang', 'Noto Serif KR', serif;
   }
-
-  body > *:first-child {
-    margin-top: 0 !important;
-  }
-
-  body > *:last-child {
-    margin-bottom: 0 !important;
-  }
-
   a {
     color: #4183c4;
     text-decoration: none;
   }
-
   a.absent {
     color: #cc0000;
   }
@@ -45,7 +32,7 @@ const githubStyles = css`
   h4,
   h5,
   h6 {
-    font-family: 'Do Hyeon', arial, sans-serif;
+    font-family: 'InfinitySans-CondBoldA1', arial, sans-serif;
     margin: 20px 0 10px;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -131,6 +118,17 @@ const githubStyles = css`
     color: #777777;
     font-size: 14px;
   }
+
+  p,
+  ul,
+  ol,
+  dl,
+  li,
+  table {
+    margin: 15px 0;
+    line-height: 1.7;
+  }
+
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     h1 {
       font-size: 25px;
@@ -198,16 +196,6 @@ const githubStyles = css`
     pre {
       font-size: 14px;
     }
-  }
-  p,
-  ul,
-  ol,
-  dl,
-  li,
-  table {
-    font-family: 'Noto Serif KR', serif;
-    margin: 15px 0;
-    line-height: 1.7;
   }
 
   hr {
@@ -318,15 +306,15 @@ const githubStyles = css`
 
   blockquote {
     border-left: 4px solid #3f87a6;
-    padding: 0 15px;
+    padding: 2px 15px;
     color: #282c35;
     background: #e4f0f5;
-    border-radius: 2px;
+    border-radius: 0px;
     margin: 15px 0;
     line-height: 1.7;
   }
   blockquote p {
-    font-family: 'IBM Plex Mono', 'Noto Serif KR', arial, sans-serif;
+    font-family: 'RIDIBatang', 'Noto Serif KR', arial, sans-serif;
   }
 
   blockquote > :first-child {
@@ -470,9 +458,9 @@ const githubStyles = css`
 
   code,
   tt {
-    font-family: 'Do Hyeon';
+    font-family: 'InfinitySans-RegularA1';
     margin: 0 2px;
-    padding: 2px 8px;
+    padding: 0 8px;
     white-space: nowrap;
     background-color: #ffe2e2;
     border-radius: 5px;
@@ -480,7 +468,7 @@ const githubStyles = css`
   }
 
   pre code {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'InfinitySans-RegularA1';
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 0;
@@ -517,7 +505,7 @@ const githubStyles = css`
   }
   /* Ref: https://docs.deckdeckgo.com/components/code/ */
   deckgo-highlight-code {
-    --deckgo-highlight-code-font-family: 'Anonymous Pro', 'Do Hyeon', sans-serif;
+    --deckgo-highlight-code-font-family: 'Ubuntu Mono', 'RIDIBatang', sans-serif;
     --deckgo-highlight-code-token-selector: #f67280;
     --deckgo-highlight-code-font-size: 1rem;
     --deckgo-highlight-code-white-space: pre;

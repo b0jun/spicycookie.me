@@ -24,7 +24,7 @@ const shake = keyframes`{
 }`;
 
 const ProfileBlock = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'InfinitySans-BoldA1', sans-serif;
   position: -webkit-sticky;
   position: sticky;
   top: 4px;

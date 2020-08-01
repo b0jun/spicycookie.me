@@ -4,7 +4,7 @@ import '../fonts/fonts.css';
 const GlobalStyle = createGlobalStyle`
 	${reset}
 	body {
-		font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+		font-family: 'InfinitySans-RegularA1', 'Roboto', 'Noto Sans KR', sans-serif;
 		background: ${props => props.theme.palette.mainBackground};
 	}
 	a{

@@ -1,21 +1,57 @@
 /* Header Title*/
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-/* Global Font [Eng] */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
-
-/* Global Font [Kor] */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;900&display=swap');
-
-/* Markdown All Font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
-
-/* Markdown h1~h6 Font, <code> Tag */
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-
 /* MarkDown <pre><code> */
 @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
 
-/* deckgo highlight code Font*/
+/* Global */
+@font-face {
+  font-family: 'InfinitySans-RegularA1';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;900&display=swap');
+
+/* Markdown All */
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap');
+
+/* Markdown h1~h6 Tag*/
+@font-face {
+  font-family: 'InfinitySans-CondBoldA1';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-CondBoldA1.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Profile */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+
+@font-face {
+  font-family: 'InfinitySans-BoldA1';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* deckgo highlight code */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@font-face {
+  font-family: 'D2Coding';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
