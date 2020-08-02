@@ -365,20 +365,21 @@ __double underscores__
 ![Alt text](/path/to/img.jpg "Optional title")
 ```
 
-![라일레이 해변](https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1)
-![라일레이 해변](https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1)
+![yellow](https://octodex.github.com/images/minion.png)
+![starwars](https://octodex.github.com/images/stormtroopocat.jpg)
 
 사이즈 조절 기능은 없기 때문에 `<img width="" height=""></img>`를 이용한다.
 
 예
 
 ```
-<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="railay"></img><br/>
-<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="railay"></img>
+<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="altText"></img><br/>
+<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="altText"></img>
 ```
 
-<img src="https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="railay"></img><br/>
-<img src="https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1" width="40%" height="30%" title="%(비율) 크기 설정" alt="railay"></img>
+<img src="https://blogfiles.pstatic.net/MjAyMDA4MDJfMjcz/MDAxNTk2MzYyMTc2MzQ0.nX-wiHvHH10gPKqRvc2Moofzmy-AHmCI6-NCb3MzlBEg.iWnzSo9sixeqru5N1nDjI-Esw3cW4NmrilZMAQKXzzog.JPEG.bjkim0228/bjun-02802.jpg?type=w1" width="450px" height="300px" alt="railay"/>
+<br/>
+<img src="https://blogfiles.pstatic.net/MjAyMDA3MzBfNjAg/MDAxNTk2MDY5NDAyODY2.cQyPMGVlD_V7mzdZar4IKSBK9rLbw8r3t30QJHh2pr4g.f5jo7y5_SmYEyikhBYqV2vPjSsHEWHkfXC3DpdjO4IAg.JPEG.bjkim0228/bjun-02802.jpg?type=w1" width="40%" height="30%" alt="railay"/>
 
 ## 2.9. 줄바꿈
 

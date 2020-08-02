@@ -254,7 +254,6 @@ const githubStyles = css`
   ul,
   ol {
     padding-left: 30px;
-    list-style: disc;
   }
 
   ul :first-child,

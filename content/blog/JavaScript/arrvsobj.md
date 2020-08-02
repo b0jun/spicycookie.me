@@ -27,12 +27,16 @@ console.log(arr);      // [1, 3, 5, 7, 9]
 > let user = {};
 
 ```
-let user = {};     // 빈 객체 선언
+// 빈 객체 선언
+let user = {};
+
+// 객체에 값 할당
 user = {
   name: "Jun",
   email: "jun@gmail.com",
   city: "Busan"
-}                  // 객체에 값 할당
+}
+
 console.log(user);
 // {name: "Jun", email: "jun@gmail.com", city: "Busan"}
 ```
@@ -74,17 +78,17 @@ let user = {
   city: "Busan"
 }
 
-/*Dot notation*/
+/* Dot notation */
 console.log(user.name);  // "Jun"
 console.log(user.email); // "jun@gmail.com"
 
-/*Bracket notation*/
+/* Bracket notation */
 console.log(user['email']); // "jun@gmail.com"
 console.log(user['city']);  // "Busan
 
 user.email === user['email'] // true
 
-/*값 변경*/
+/* 값 변경 */
 user.name = "Bob";
 console.log(user.name); // "Bob"
 ```
@@ -99,7 +103,7 @@ let num = [1, 2, 3, 4, 5];
 /* push(): 마지막 index에 배열 추가 */
 num.push(100); // --> [1, 2, 3, 4, 5, 100]
 
-/* pop(): 마지막 index의 배열 삭제*/
+/* pop(): 마지막 index의 배열 삭제 */
 num.pop(); // --> [1, 2, 3, 4, 5]
 
 /* shift(): 첫번째 index의 배열 삭제 */
@@ -108,7 +112,7 @@ num.shift(); // --> [2, 3, 4, 5]
 /* unshift(): 첫번째 index에 배열 추가 */
 num.unshift(500); // --> [500, 2, 3, 4, 5]
 
-/* concat(): 배열을 병합, push()와 유사*/
+/* concat(): 배열을 병합, push()와 유사 */
 let newNum = num.concat(300);
 console.log(num);    // --> [500, 2, 3, 4, 5]
 console.log(newNum); // --> [500, 2, 3, 4, 5, 300]
@@ -128,8 +132,7 @@ let user = {
   email: "jun@gmail.com",
 }
 
-/* 값을 추가하기 */
-
+// 값을 추가하기
 user.isStudent = true;
 user['hobby'] = ['축구', '야구'];
 /**
@@ -142,7 +145,7 @@ user['hobby'] = ['축구', '야구'];
  *}
  */
 
-/* delete: 값을 삭제하기*/
+// delete: 값을 삭제하기
 delete user.email;
 /**
 *{
@@ -153,7 +156,7 @@ delete user.email;
 *}
 */
 
-/* 키 확인하기 */
+// 키 확인하기
 'city' in user; // true
 'email' in user; // false
 }
@@ -174,7 +177,7 @@ typeof(arr) === type(obj) // true
 Array.isArray(arr); // true
 Array.isArray(obj); // false
 
-/* 객체는 length 사용 불가*/
+/* 객체는 length 사용 불가 */
 arr.length // 0
 obj.length // undefined
 ```
