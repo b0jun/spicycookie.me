@@ -80,7 +80,9 @@ bar.sayHi();
 
 ## 프로토타입 체인
 
-정리하자면, 프로토타입 체인은 객체의 Property에 접근 시, 해당 객체에 Property가 없을 경우 부모 객체의 Property를 참조하는 과정이다. 위에서 생성했었던 Person 함수 역시 `__proto__`를 가지고 있는 것을 볼 수 있는데, 이를 쭉 타고가면 Object.prototype이 나온다. 즉, 프로토타입 체인의 종점(End of prototype chain)은 `Object.prototype`이다.
+정리하자면, 프로토타입 체인은 객체의 Property에 접근 시, 해당 객체에 Property가 없을 경우 부모 객체의 Property를 참조하는 과정이다. 위에서 생성했었던 Person 함수 역시 `__proto__`를 가지고 있는 것을 볼 수 있는데, 이를 쭉 타고가면 Object.prototype이 나온다.
+
+즉, 프로토타입 체인의 종점(End of prototype chain)은 `Object.prototype`이다.
 
 <center><img src="./images/prototype_3.png" alt="prototype_3" /></center>
 

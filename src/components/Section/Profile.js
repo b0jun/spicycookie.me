@@ -39,8 +39,6 @@ const ProfileBlock = styled.div`
     margin-bottom: 1rem;
   }
   text-align: center;
-  @media screen and (max-width: ${props => props.theme.responsive.small}) {
-  }
 `;
 
 const Info = styled.div`
