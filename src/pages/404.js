@@ -76,10 +76,10 @@ const paddle = keyframes`{
 }`;
 const circular = keyframes`{
   0% {
-    transform: rotate(360deg) translateX(100px);
+    transform: rotate(360deg) translateX(60px);
   }
   100% {
-    transform: rotate(0deg) translateX(100px);
+    transform: rotate(0deg) translateX(60px);
   }
 }`;
 
@@ -102,14 +102,19 @@ const ripple = keyframes`{
   }
 }`;
 const Wrapper = styled.div`
-  padding: 10px;
+  padding: 30px 10px 0 10px;
   background: #9aded6;
   border-radius: 20px;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    margin-top: 1rem;
+  }
 `;
 const NotFoundArea = styled.div`
   text-align: center;
+  color: #222831;
   h1 {
     font-size: 5rem;
+    font-weight: 900;
   }
   p {
     font-size: 1.7rem;
@@ -121,9 +126,11 @@ const SLink = styled(Link)`
   padding: 8px;
   border-radius: 3px;
   background: #4b5d67;
-  transition: background 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  color: white;
   &:hover {
-    background: #ebecf1;
+    background: #b8b0b0;
+    color: black;
   }
 `;
 const Container = styled.div`
