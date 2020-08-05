@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 const Block = styled.div`
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   border-radius: 20px;
   background: ${props => props.theme.palette.postCardBackground};
   transition: transform 500ms;
@@ -41,13 +41,13 @@ const Label = styled.p`
 `;
 
 const Name = styled.span`
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   padding: 3px 10px;
   border-radius: 15px;
   background: ${props => (props.labelColor ? props.labelColor : 'white')};
 `;
 const Cover = styled.div`
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   width: 160px;
   height: 160px;
   border-radius: 20px;

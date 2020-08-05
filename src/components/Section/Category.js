@@ -34,7 +34,7 @@ const List = styled.ul`
 `;
 
 const Item = styled(Link)`
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   position: relative;
   float: left;
   margin-right: 1rem;
@@ -48,7 +48,12 @@ const Item = styled(Link)`
     font-weight: 500;
   }
   &:hover {
-    background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
+    background: linear-gradient(
+      92deg,
+      ${props => props.theme.palette.catGradient1},
+      ${props => props.theme.palette.catGradient2},
+      ${props => props.theme.palette.catGradient3}
+    );
     div {
       color: ${props => props.theme.palette.mainBackground};
     }
@@ -61,7 +66,12 @@ const Item = styled(Link)`
   ${props =>
     props.current &&
     css`
-      background: linear-gradient(92deg, #7f7fd5, #86a8e7, #91eae4);
+      background: linear-gradient(
+        92deg,
+        ${props => props.theme.palette.catGradient1},
+        ${props => props.theme.palette.catGradient2},
+        ${props => props.theme.palette.catGradient3}
+      );
       div {
         color: ${props => props.theme.palette.mainBackground};
       }
@@ -71,7 +81,7 @@ const Item = styled(Link)`
 const CategoryTitle = styled.div`
   margin: 0.5rem 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid ${props => props.theme.palette.footerFont};
+  border-bottom: 2px solid ${props => props.theme.palette.footerFont};
 
   font-size: 1.7rem;
   font-weight: 500;

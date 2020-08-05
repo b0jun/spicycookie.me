@@ -29,7 +29,7 @@ const Title = styled.h1`
   margin-bottom: 1rem;
   font-size: 2.2rem;
   font-weight: 900;
-  color: ${props => props.theme.palette.brightBlue1};
+  color: ${props => props.theme.commonColor.brightBlue1};
   @media screen and (max-width: ${props => props.theme.responsive.largest}) {
     font-size: 1.9rem;
   }
@@ -39,12 +39,12 @@ const Date = styled.p`
   margin-top: 0.5rem;
   padding-right: 0.5rem;
   text-align: right;
-  color: ${props => props.theme.palette.profileDesc};
+  color: #b7b8c0;
 `;
 const Header = styled.div`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: ${props => props.theme.palette.brightBlue3};
+  background: ${props => props.theme.palette.postFrameTop};
   min-height: 200px;
   display: flex;
   justify-content: center;
@@ -56,19 +56,19 @@ const ButtonBlock = styled.div`
 `;
 const StyledButton = styled(Button)`
   &:nth-child(1) {
-    color: ${props => props.theme.palette.brightBlue1};
-    border: 2px solid ${props => props.theme.palette.brightBlue1};
+    color: ${props => props.theme.commonColor.brightBlue1};
+    border: 2px solid ${props => props.theme.commonColor.brightBlue1};
     &:hover {
       color: #eee;
-      background: ${props => props.theme.palette.brightBlue1};
+      background: ${props => props.theme.commonColor.brightBlue1};
     }
   }
   &:nth-child(2) {
-    color: ${props => props.theme.palette.brightGreen2};
-    border: 2px solid ${props => props.theme.palette.brightGreen2};
+    color: ${props => props.theme.commonColor.brightGreen2};
+    border: 2px solid ${props => props.theme.commonColor.brightGreen2};
     &:hover {
       color: #eee;
-      background: ${props => props.theme.palette.brightGreen2};
+      background: ${props => props.theme.commonColor.brightGreen2};
     }
   }
 `;
@@ -77,9 +77,9 @@ const Line = styled.div`
   height: 4px;
   background: linear-gradient(
     92deg,
-    ${props => props.theme.palette.brightBlue2},
-    ${props => props.theme.palette.brightBlue3},
-    ${props => props.theme.palette.brightGreen3}
+    ${props => props.theme.commonColor.brightBlue2},
+    ${props => props.theme.commonColor.brightBlue3},
+    ${props => props.theme.commonColor.brightGreen3}
   );
   margin: 0 auto;
 `;

@@ -30,7 +30,7 @@ const ProfileBlock = styled.div`
   top: 4px;
   background: ${props => props.theme.palette.profileBackground};
   border-radius: 20px;
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   width: ${props => props.theme.sizes.profileWidth};
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     width: 100%;
@@ -54,7 +54,7 @@ const Footer = styled.div`
 `;
 
 const Item = styled.a`
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   border-radius: 100%;
   width: 50px;
   height: 50px;
@@ -70,16 +70,32 @@ const Item = styled.a`
     perspective: 1000px;
   }
   :first-child {
-    background: linear-gradient(to bottom right, #5e5aec, #3f9efc);
+    background: linear-gradient(
+      to bottom right,
+      ${props => props.theme.palette.bioGradient1},
+      ${props => props.theme.palette.bioGradient2}
+    );
   }
   :nth-child(2) {
-    background: linear-gradient(to bottom right, #6452e9, #639ff9);
+    background: linear-gradient(
+      to bottom right,
+      ${props => props.theme.palette.bioGradient3},
+      ${props => props.theme.palette.bioGradient4}
+    );
   }
   :nth-child(3) {
-    background: linear-gradient(to top right, #8162ce, #f54ba5);
+    background: linear-gradient(
+      to bottom right,
+      ${props => props.theme.palette.bioGradient5},
+      ${props => props.theme.palette.bioGradient6}
+    );
   }
   :last-child {
-    background: linear-gradient(to top right, #8162ce, #f54ba5);
+    background: linear-gradient(
+      to bottom right,
+      ${props => props.theme.palette.bioGradient7},
+      ${props => props.theme.palette.bioGradient8}
+    );
   }
 `;
 const BlockOne = styled.div``;
@@ -121,7 +137,7 @@ const InfoItem = styled.div`
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    box-shadow: 0 0 2px ${props => props.theme.palette.shadow};
+    box-shadow: 0 0 2px ${props => props.theme.commonColor.shadow};
   }
   h1 {
     font-size: 1.5rem;

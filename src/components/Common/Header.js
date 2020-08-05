@@ -5,18 +5,30 @@ import logo from '../../../static/images/svg/logo.svg';
 import { Link } from 'gatsby';
 import '../../lib/fonts/fonts.css';
 
+const ThemeChanger = styled.div`
+  width: 100px;
+  height: 60px;
+`;
 const HeaderBlock = styled.div`
   background: ${props => props.theme.palette.headerBackground};
   width: 100%;
   height: 60px;
-  box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
+  box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
 `;
+
 const HeaderInner = styled.div`
   height: 60px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    justify-content: center;
+    display: block;
+    position: relative;
+    ${ThemeChanger} {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 `;
 const SLink = styled(Link)`
@@ -28,7 +40,7 @@ const Title = styled.div`
   font-family: 'Bangers', cursive;
   font-size: 2.5rem;
   color: ${props => props.theme.palette.headerTitle};
-  text-shadow: 2px 3px 1px ${props => props.theme.palette.shadow};
+  text-shadow: 2px 3px 1px ${props => props.theme.commonColor.shadow};
   margin-right: 0.3rem;
 `;
 const Img = styled.img`
@@ -44,6 +56,7 @@ const Header = () => {
             <Title>SpicyCookie</Title>
             <Img src={logo} alt="logo" />
           </SLink>
+          <ThemeChanger />
         </HeaderInner>
       </ContentWrapper>
     </HeaderBlock>

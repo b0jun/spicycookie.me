@@ -22,11 +22,11 @@ const Item = styled.div`
 const StyledButton = styled(Button)`
   font-size: 0.8rem;
   padding: 5px 8px;
-  color: ${props => props.theme.palette.brightBlue2};
-  border: 2px solid ${props => props.theme.palette.brightBlue2};
+  color: ${props => props.theme.commonColor.brightBlue2};
+  border: 2px solid ${props => props.theme.commonColor.brightBlue2};
   &:hover {
     color: #eee;
-    background: ${props => props.theme.palette.brightBlue2};
+    background: ${props => props.theme.commonColor.brightBlue2};
   }
 `;
 export default ({ pageContext }) => {
