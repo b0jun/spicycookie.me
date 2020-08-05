@@ -4,7 +4,7 @@ import GlobalStyle from '../../lib/styles/globalStyles';
 import Header from './Header';
 import Footer from './Footer';
 import { ThemeProvider } from 'styled-components';
-import theme from '../../lib/styles/theme';
+import { blue, lilac } from '../../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
 import Profile from '../Section/Profile';
 import { globalHistory as history } from '@reach/router';
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
     location: { pathname },
   } = history;
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={blue}>
       <GlobalStyle />
       <Header />
       <ContentWrapper>

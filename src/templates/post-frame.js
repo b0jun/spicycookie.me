@@ -59,7 +59,7 @@ const StyledButton = styled(Button)`
     color: ${props => props.theme.palette.brightBlue1};
     border: 2px solid ${props => props.theme.palette.brightBlue1};
     &:hover {
-      color: ${props => props.theme.palette.mainFont};
+      color: #eee;
       background: ${props => props.theme.palette.brightBlue1};
     }
   }
@@ -67,7 +67,7 @@ const StyledButton = styled(Button)`
     color: ${props => props.theme.palette.brightGreen2};
     border: 2px solid ${props => props.theme.palette.brightGreen2};
     &:hover {
-      color: ${props => props.theme.palette.mainFont};
+      color: #eee;
       background: ${props => props.theme.palette.brightGreen2};
     }
   }

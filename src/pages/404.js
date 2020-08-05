@@ -134,6 +134,8 @@ const SLink = styled(Link)`
   }
 `;
 const Container = styled.div`
+  overflow-x: hidden;
+  overflow-y: hidden;
   display: grid;
   height: 60vh;
   place-items: center;

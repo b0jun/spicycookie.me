@@ -27,7 +27,7 @@ const SLink = styled(Link)`
 const Title = styled.div`
   font-family: 'Bangers', cursive;
   font-size: 2.5rem;
-  color: #eee;
+  color: ${props => props.theme.palette.headerTitle};
   text-shadow: 2px 3px 1px ${props => props.theme.palette.shadow};
   margin-right: 0.3rem;
 `;

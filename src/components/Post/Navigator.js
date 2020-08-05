@@ -25,7 +25,7 @@ const StyledButton = styled(Button)`
   color: ${props => props.theme.palette.brightBlue2};
   border: 2px solid ${props => props.theme.palette.brightBlue2};
   &:hover {
-    color: ${props => props.theme.palette.mainFont};
+    color: #eee;
     background: ${props => props.theme.palette.brightBlue2};
   }
 `;

@@ -43,7 +43,7 @@ const Item = styled(Link)`
   background: ${props => props.theme.palette.categoryBackground};
   margin-bottom: 1rem;
   div {
-    color: ${props => props.theme.palette.dateFont};
+    color: ${props => props.theme.palette.categoryTitle};
     text-align: center;
     font-weight: 500;
   }

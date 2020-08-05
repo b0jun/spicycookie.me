@@ -8,7 +8,7 @@ const Block = styled.div`
   margin-bottom: 1.5rem;
   box-shadow: 0px 2px 4px ${props => props.theme.palette.shadow};
   border-radius: 20px;
-  background: ${props => props.theme.palette.postCard};
+  background: ${props => props.theme.palette.postCardBackground};
   transition: transform 500ms;
   &:hover {
     transform: translateY(-5px);
@@ -27,13 +27,13 @@ const Title = styled.h1`
 const Description = styled.p`
   font-weight: 400;
   font-size: 0.9rem;
-  color: ${props => props.theme.palette.description};
+  color: ${props => props.theme.palette.postCardDesc};
   padding-bottom: 1.3rem;
   line-height: 1.2rem;
 `;
 const Date = styled.p`
   font-size: 0.9rem;
-  color: ${props => props.theme.palette.dateFont};
+  color: ${props => props.theme.palette.postCardDate};
   padding-bottom: 0.8rem;
 `;
 const Label = styled.p`

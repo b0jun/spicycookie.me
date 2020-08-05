@@ -13,7 +13,7 @@ const buttonStyle = css`
   cursor: pointer;
   &:hover {
     background: ${props => props.theme.palette.mainBackground};
-    color: ${props => props.theme.palette.mainFont};
+    color: #eeeeee;
   }
 `;
 

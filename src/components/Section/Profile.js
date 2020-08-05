@@ -121,7 +121,7 @@ const InfoItem = styled.div`
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    box-shadow: 1px 3px 4px ${props => props.theme.palette.shadow};
+    box-shadow: 0 0 2px ${props => props.theme.palette.shadow};
   }
   h1 {
     font-size: 1.5rem;
