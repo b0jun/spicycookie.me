@@ -4,11 +4,8 @@ import ContentWrapper from './ContentWrapper';
 import logo from '../../../static/images/svg/logo.svg';
 import { Link } from 'gatsby';
 import '../../lib/fonts/fonts.css';
+import ThemeChanger from './ThemeChanger';
 
-const ThemeChanger = styled.div`
-  width: 100px;
-  height: 60px;
-`;
 const HeaderBlock = styled.div`
   background: ${props => props.theme.palette.headerBackground};
   width: 100%;
@@ -24,17 +21,15 @@ const HeaderInner = styled.div`
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     display: block;
     position: relative;
-    ${ThemeChanger} {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
   }
 `;
 const SLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    height: 60px;
+  }
 `;
 const Title = styled.div`
   font-family: 'Bangers', cursive;

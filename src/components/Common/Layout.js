@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from '../../lib/styles/globalStyles';
 import Header from './Header';
@@ -31,6 +31,8 @@ const MainWrapper = styled.div`
 `;
 
 const Layout = ({ children }) => {
+  // const [themeMode, setThemeMode] = useState('blue');
+  // const theme = themeMode === 'blue' ? blue : lilac;
   const {
     location: { pathname },
   } = history;
