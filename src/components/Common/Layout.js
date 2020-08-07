@@ -33,7 +33,6 @@ const MainWrapper = styled.div`
 
 const Layout = ({ children }) => {
   /* Theme Changer */
-
   const [themeMode, setThemeMode] = useLocalStorage('theme', 'blue');
   const theme = themeMode => {
     if (themeMode === 'blue') return blue;
@@ -42,7 +41,6 @@ const Layout = ({ children }) => {
     else if (themeMode === 'red') return red;
   };
   const setMode = mode => {
-    window.localStorage.setItem('theme', mode);
     setThemeMode(mode);
   };
 

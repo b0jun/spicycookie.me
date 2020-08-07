@@ -20,10 +20,6 @@ module.exports = {
       name: '자료구조',
       color: '#a8d8ea',
     },
-    // {
-    //   name: '알고리즘',
-    //   color: '#a8e6cf',
-    // },
     {
       name: 'sample',
       color: '#bfd4fe',
