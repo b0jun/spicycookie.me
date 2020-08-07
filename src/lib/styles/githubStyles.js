@@ -8,7 +8,7 @@ const githubStyles = css`
     font-family: 'RIDIBatang', 'Noto Serif KR', serif;
   }
   a {
-    color: #4183c4;
+    color: ${props => props.theme.palette.aFont};
     text-decoration: none;
   }
   a.absent {
@@ -304,10 +304,10 @@ const githubStyles = css`
   }
 
   blockquote {
-    border-left: 4px solid #3f87a6;
+    border-left: 4px solid ${props => props.theme.palette.blockquoteBorder};
     padding: 2px 15px;
     color: #282c35;
-    background: #e4f0f5;
+    background: ${props => props.theme.palette.blockquoteBack};
     border-radius: 0px;
     margin: 15px 0;
     line-height: 1.7;
@@ -461,9 +461,9 @@ const githubStyles = css`
     margin: 0 2px;
     padding: 0 8px;
     white-space: nowrap;
-    background-color: #ffe2e2;
+    background-color: ${props => props.theme.palette.postAccentBack};
     border-radius: 5px;
-    color: #d34659;
+    color: ${props => props.theme.palette.postAccentFont};
   }
 
   pre code {

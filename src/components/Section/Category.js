@@ -85,7 +85,7 @@ const CategoryTitle = styled.div`
 
   font-size: 1.7rem;
   font-weight: 500;
-  color: ${props => props.theme.palette.mainFont};
+  color: ${props => props.theme.palette.categoryPage};
 `;
 
 const Category = ({ pathname, categories }) => {

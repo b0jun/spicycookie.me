@@ -144,6 +144,9 @@ const ThemeChanger = ({ setMode }) => {
         <li>
           <Item onClick={() => setMode('mint')} style={{ background: '#6ce4ca' }}></Item>
         </li>
+        <li>
+          <Item onClick={() => setMode('red')} style={{ background: '#bc5148' }}></Item>
+        </li>
       </Menu>
     </Block>
   );

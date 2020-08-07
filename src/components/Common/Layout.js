@@ -4,7 +4,7 @@ import GlobalStyle from '../../lib/styles/globalStyles';
 import Header from './Header';
 import Footer from './Footer';
 import { ThemeProvider } from 'styled-components';
-import { blue, lilac, mint } from '../../lib/styles/theme';
+import { blue, lilac, mint, red } from '../../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
 import Profile from '../Section/Profile';
 import { globalHistory as history } from '@reach/router';
@@ -37,6 +37,7 @@ const Layout = ({ children }) => {
     if (themeMode === 'blue') return blue;
     else if (themeMode === 'lilac') return lilac;
     else if (themeMode === 'mint') return mint;
+    else if (themeMode === 'red') return red;
   };
   const setMode = mode => {
     window.localStorage.setItem('theme', mode);
