@@ -103,7 +103,7 @@ const ripple = keyframes`{
 }`;
 const Wrapper = styled.div`
   padding: 30px 10px 0 10px;
-  background: #9aded6;
+  background: ${props => props.theme.palette.water404};
   border-radius: 20px;
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     margin-top: 1rem;

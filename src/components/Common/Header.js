@@ -42,7 +42,7 @@ const Img = styled.img`
   height: 50px;
 `;
 
-const Header = () => {
+const Header = ({ setMode }) => {
   return (
     <HeaderBlock>
       <ContentWrapper>
@@ -51,7 +51,7 @@ const Header = () => {
             <Title>SpicyCookie</Title>
             <Img src={logo} alt="logo" />
           </SLink>
-          <ThemeChanger />
+          <ThemeChanger setMode={setMode} />
         </HeaderInner>
       </ContentWrapper>
     </HeaderBlock>

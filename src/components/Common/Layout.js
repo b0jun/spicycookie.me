@@ -4,13 +4,12 @@ import GlobalStyle from '../../lib/styles/globalStyles';
 import Header from './Header';
 import Footer from './Footer';
 import { ThemeProvider } from 'styled-components';
-import { blue, lilac } from '../../lib/styles/theme';
+import { blue, lilac, mint } from '../../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
 import Profile from '../Section/Profile';
 import { globalHistory as history } from '@reach/router';
 
 const ContentBlock = styled.div`
-  min-height: 85vh;
   margin-top: 2rem;
   display: flex;
   align-items: flex-start;
@@ -20,10 +19,11 @@ const ContentBlock = styled.div`
     justify-content: flex-start;
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
-    margin-top: 0;
+    margin-top: 1rem;
   }
 `;
 const MainWrapper = styled.div`
+  min-height: 85vh;
   width: calc(100% - ${props => props.theme.sizes.profileWidth} - 40px);
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     width: 100%;
@@ -31,15 +31,26 @@ const MainWrapper = styled.div`
 `;
 
 const Layout = ({ children }) => {
-  // const [themeMode, setThemeMode] = useState('blue');
-  // const theme = themeMode === 'blue' ? blue : lilac;
+  /* Theme Changer */
+  const [themeMode, setThemeMode] = useState(window.localStorage.getItem('theme') || 'blue');
+  const theme = themeMode => {
+    if (themeMode === 'blue') return blue;
+    else if (themeMode === 'lilac') return lilac;
+    else if (themeMode === 'mint') return mint;
+  };
+  const setMode = mode => {
+    window.localStorage.setItem('theme', mode);
+    setThemeMode(mode);
+  };
+
   const {
     location: { pathname },
   } = history;
+
   return (
-    <ThemeProvider theme={blue}>
+    <ThemeProvider theme={theme(themeMode)}>
       <GlobalStyle />
-      <Header />
+      <Header setMode={setMode} />
       <ContentWrapper>
         <ContentBlock pathname={pathname === '/' || pathname.indexOf('/category/') !== -1}>
           <MainWrapper>

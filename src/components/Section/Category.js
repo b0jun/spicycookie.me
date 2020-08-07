@@ -55,7 +55,7 @@ const Item = styled(Link)`
       ${props => props.theme.palette.catGradient3}
     );
     div {
-      color: ${props => props.theme.palette.mainBackground};
+      color: ${props => props.theme.palette.categoryCurrent};
     }
     animation: ${shake} 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
@@ -73,7 +73,7 @@ const Item = styled(Link)`
         ${props => props.theme.palette.catGradient3}
       );
       div {
-        color: ${props => props.theme.palette.mainBackground};
+        color: ${props => props.theme.palette.categoryCurrent};
       }
     `};
 `;

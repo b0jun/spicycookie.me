@@ -69,7 +69,7 @@ const Menu = styled.ul`
     props.isOpen
       ? css`
           visibility: visible;
-          opacity: 0.9;
+          opacity: 1;
           transition: visibility 0s linear 0s, opacity 300ms;
         `
       : css`
@@ -79,13 +79,13 @@ const Menu = styled.ul`
         `}
   z-index: 1000;
   position: absolute;
-  top: 65px;
+  top: 60px;
   right: -5px;
   outline: none;
   list-style: none;
   display: flex;
   align-items: center;
-  background: #848ccf;
+  background: ${props => props.theme.palette.themeChanger};
   border-radius: 20px;
   height: 20px;
   li {
@@ -95,19 +95,20 @@ const Menu = styled.ul`
     width: 20px;
     height: 20px;
     padding: 10px;
-    background: #848ccf;
+    background: ${props => props.theme.palette.themeChanger};
     border-radius: 100%;
     &:last-child {
       position: relative;
       &:after {
-        border-color: transparent transparent #848ccf transparent;
+        border-color: transparent transparent ${props => props.theme.palette.themeChanger}
+          transparent;
         border-style: solid;
         border-width: 0 10px 15px 10px;
         content: '';
         width: 0;
         height: 0;
         position: absolute;
-        top: -10px;
+        top: -8px;
         left: 10px;
       }
     }
@@ -120,8 +121,9 @@ const Item = styled.div`
   border-radius: 100%;
   cursor: pointer;
 `;
-const ThemeChanger = () => {
+const ThemeChanger = ({ setMode }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Block>
       <Toggle
@@ -134,13 +136,13 @@ const ThemeChanger = () => {
       </Toggle>
       <Menu tabIndex={0} isOpen={isOpen} onBlur={() => setIsOpen(false)}>
         <li>
-          <Item style={{ background: '#3f72af' }}></Item>
+          <Item onClick={() => setMode('blue')} style={{ background: '#3f72af' }}></Item>
         </li>
         <li>
-          <Item style={{ background: '#b9bbdf' }}></Item>
+          <Item onClick={() => setMode('lilac')} style={{ background: '#b9bbdf' }}></Item>
         </li>
         <li>
-          <Item style={{ background: '' }}></Item>
+          <Item onClick={() => setMode('mint')} style={{ background: '#6ce4ca' }}></Item>
         </li>
       </Menu>
     </Block>

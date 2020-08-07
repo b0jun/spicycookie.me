@@ -36,6 +36,8 @@ export const blue = {
     categoryBackground: '#393e46',
     postCardBackground: '#355c7d',
     postFrameTop: '#bfd4fe',
+    themeChanger: '#a6b1e1',
+    water404: '#3490de',
 
     /* font */
     headerTitle: '#eeeeee',
@@ -44,6 +46,7 @@ export const blue = {
     postCardDesc: '#e7e6e1',
     postCardDate: '#dfd3c3',
     categoryTitle: '#dfd3c3',
+    categoryCurrent: '#282c35',
     mainFont: '#eeeeee', //PostCardTitle, ProfileName, CategoryBigName
     footerFont: '#52616b',
 
@@ -75,6 +78,8 @@ export const lilac = {
     categoryBackground: '#8785a2',
     postCardBackground: '#dbe2ef',
     postFrameTop: '#645c84',
+    themeChanger: '#957dad',
+    water404: '#aa96da',
 
     /* font */
     headerTitle: '#dde7f2',
@@ -83,6 +88,7 @@ export const lilac = {
     postCardDesc: '#3a4750',
     postCardDate: '#878ecd',
     categoryTitle: '#282c35',
+    categoryCurrent: '#b9bbdf',
     mainFont: '#3a4750', //PostCardTitle, ProfileName, CategoryBigName
     footerFont: '#52616b',
 
@@ -98,6 +104,48 @@ export const lilac = {
     bioGradient6: '#eaafc8',
     bioGradient7: '#654ea3',
     bioGradient8: '#eaafc8',
+  },
+  commonColor,
+  responsive,
+  sizes,
+  sideSpace,
+};
+
+export const mint = {
+  palette: {
+    /* background */
+    mainBackground: '#e4f9f5',
+    headerBackground: '#6ce4ca',
+    profileBackground: '#bbded6',
+    categoryBackground: '#00adb5',
+    postCardBackground: '#d7fbe8',
+    postFrameTop: '#c4e3cb',
+    themeChanger: '#649dad',
+    water404: '#9aded6',
+
+    /* font */
+    headerTitle: '#e4f9f5',
+    profileJob: '#729d39',
+    profileDesc: '#307672',
+    postCardDesc: '#3a4750',
+    postCardDate: '#5c8d89',
+    categoryTitle: '#1e2022',
+    categoryCurrent: '#e4f9f5',
+    mainFont: '#40514e', //PostCardTitle, ProfileName, CategoryBigName
+    footerFont: '#52616b',
+
+    /* gradient */
+    catGradient1: '#1a3c40',
+    catGradient2: '#144d53',
+    catGradient3: '#307672',
+    bioGradient1: '#2eb872',
+    bioGradient2: '#a3de83',
+    bioGradient3: '#2ea872',
+    bioGradient4: '#a3cc83',
+    bioGradient5: '#144d53',
+    bioGradient6: '#8aae92',
+    bioGradient7: '#142d53',
+    bioGradient8: '#8aaa92',
   },
   commonColor,
   responsive,
