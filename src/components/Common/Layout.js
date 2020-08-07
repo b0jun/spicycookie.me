@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from '../../lib/styles/globalStyles';
 import Header from './Header';
@@ -8,6 +8,7 @@ import { blue, lilac, mint, red } from '../../lib/styles/theme';
 import ContentWrapper from './ContentWrapper';
 import Profile from '../Section/Profile';
 import { globalHistory as history } from '@reach/router';
+import { useLocalStorage } from '../../lib/hooks/useLocalStorage';
 
 const ContentBlock = styled.div`
   margin-top: 2rem;
@@ -32,7 +33,8 @@ const MainWrapper = styled.div`
 
 const Layout = ({ children }) => {
   /* Theme Changer */
-  const [themeMode, setThemeMode] = useState(window.localStorage.getItem('theme') || 'blue');
+
+  const [themeMode, setThemeMode] = useLocalStorage('theme', 'blue');
   const theme = themeMode => {
     if (themeMode === 'blue') return blue;
     else if (themeMode === 'lilac') return lilac;
