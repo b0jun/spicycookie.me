@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Layout from '../components/Common/Layout';
 import { Link } from 'gatsby';
+import { Seo } from '../components/Service/Seo';
 
 const blinking = keyframes` {
   0% {
@@ -377,6 +378,7 @@ const Tail = styled.div`
 const NotFoundPage = () => {
   return (
     <Layout>
+      <Seo title={'404NotFound'} />
       <Wrapper>
         <NotFoundArea>
           <h1>404</h1>
