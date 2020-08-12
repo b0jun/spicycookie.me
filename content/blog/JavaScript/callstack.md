@@ -63,7 +63,7 @@ setTimeout() 메소드를 위임받아 처리한 프로그램은 비동기적 AP
 
 > setTimeout 메소드에 인터벌을 0초로 설정하여도 호출 순서가 ① - ③ - ② 인것은 변함 없다.
 
-<center><img src="https://i.ibb.co/yS3PXSj/callstack-2.gif" alt="callstack-2" border="0"></center>
+<center><img src="https://i.ibb.co/yS3PXSj/callstack-2.gif" alt="callstack-2"></center>
 
 이러한 비동기가 처리되는 과정을 살펴보자.
 
