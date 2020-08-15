@@ -2,7 +2,7 @@
 title: '자바스크립트 비동기 Call Stack'
 date: '2020-08-10'
 category: 'JavaScript'
-cover: '../images/js.png'
+cover: './images/callstack_cover.png'
 private: false
 ---
 

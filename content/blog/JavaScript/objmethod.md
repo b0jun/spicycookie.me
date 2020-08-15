@@ -2,7 +2,7 @@
 title: '[JS] Object 관련 메서드'
 date: '2020-06-18'
 category: 'JavaScript'
-cover: '../images/js.png'
+cover: './images/objmethod_cover.png'
 private: false
 ---
 

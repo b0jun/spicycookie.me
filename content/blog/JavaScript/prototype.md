@@ -2,7 +2,7 @@
 title: 'What is prototype, __proto__ ??'
 date: '2020-07-30'
 category: 'JavaScript'
-cover: '../images/js.png'
+cover: './images/prototype_cover.png'
 private: false
 ---
 

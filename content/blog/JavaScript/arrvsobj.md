@@ -2,7 +2,7 @@
 title: '배열과 객체의 개념과 차이 (Array vs Object)'
 date: '2020-06-17'
 category: 'JavaScript'
-cover: '../images/js.png'
+cover: './images/arrvsobj_cover.png'
 private: false
 ---
 

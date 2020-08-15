@@ -2,7 +2,7 @@
 title: '[JS] Object-Oriented Programming'
 date: '2020-07-29'
 category: 'JavaScript'
-cover: '../images/js.png'
+cover: './images/oop_cover.png'
 private: false
 ---
 
