@@ -164,6 +164,11 @@ asyncConfirm을 호출하면 프로미스를 반환하고 resolve 호출 전까�
   (<a href='https://codepen.io/bjkim'>@bjkim</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+### 🧬 연관 포스트
+
+- [Part1. 자바스크립트 비동기 Call Stack](https://spicycookie.me/JavaScript/callstack/)
+- [Part2. 비동기 처리를 위한 Promise 객체](https://spicycookie.me/JavaScript/promise/)
+
 ## 🔍 Reference
 
 - [MDN | async await](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Async_await)

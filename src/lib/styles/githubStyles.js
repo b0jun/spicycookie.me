@@ -199,9 +199,11 @@ const githubStyles = css`
   }
 
   hr {
-    border: 0 none;
-    color: #cccccc;
-    height: 4px;
+    display: block;
+    border: 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #eee;
+    margin: 1em 0;
     padding: 0;
   }
 

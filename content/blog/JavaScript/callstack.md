@@ -72,3 +72,12 @@ setTimeout() 메소드를 위임받아 처리한 프로그램은 비동기적 AP
 3. 콜백 큐는 대기하다가 스택이 비는 시점에 이벤트 루프를 돌려 스택에 넣는다.
 
 즉, `이벤트 루프(Event loop)`는 큐와 스택 이 둘을 지켜보다가 스택이 비는 시점에 콜백을 실행시켜 주는 역할을 한다. 또 이를 통해 WebAPI가 실행되는 동안에는 다른 코드가 정상적으로 실행 될 수 있다.
+
+### 🧬 연관 포스트
+
+- [Part2. 비동기 처리를 위한 Promise 객체](https://spicycookie.me/JavaScript/promise/)
+- [Part3. 비동기를 더 쉽게 다루는 async/await](https://spicycookie.me/JavaScript/asyncawait/)
+
+## 🔍 Reference
+
+- [JSConf | event loop](https://www.youtube.com/watch?v=8aGhZQkoFbQ)

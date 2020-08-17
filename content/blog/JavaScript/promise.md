@@ -8,9 +8,9 @@ private: false
 
 # 🍪 Promise란 무엇인가?
 
-`Promise`는 자바스크립트에서 제공하는 비동기를 간편하게 처리할 수 있게 도와주는 객체이다. Promise 이전에 비동기 처리로 콜백 패턴을 주로 사용했었다. 그러나 `콜백 지옥(Callback Hell)`으로 인해 가독성도 나쁘고, 비동기 처리 중에 발생한 에러의 처리가 까다로웠다. Promise는 이러한 단점을 보완하기 위해 나온 대안이라고 봐도 무방하다. 
+`Promise`는 자바스크립트에서 제공하는 비동기를 간편하게 처리할 수 있게 도와주는 객체이다. Promise 이전에 비동기 처리로 콜백 패턴을 주로 사용했었다. 그러나 `콜백 지옥(Callback Hell)`으로 인해 가독성도 나쁘고, 비동기 처리 중에 발생한 에러의 처리가 까다로웠다. Promise는 이러한 단점을 보완하기 위해 나온 대안이라고 봐도 무방하다.
 
-## 👻 끔찍한 Callback에서 벗어나 Promise 적용하기 
+## 👻 끔찍한 Callback에서 벗어나 Promise 적용하기
 
 Promise를 설명하기에 앞서, Callback과 Promise를 통해 짜진 두 코드를 보자.
 
@@ -24,6 +24,7 @@ add10(5, res => {
    console.log(res); // 15
 });
 ```
+
 ```
 /* promise */
 function add20(a){
@@ -47,6 +48,7 @@ add10(5, res => {
    });
 });
 ```
+
 ```
 /* promise */
 add20(5)
@@ -80,7 +82,7 @@ const promise = new Promise((resolve, reject) => {
 - then: 두 개의 콜백 함수를 인자로 받으며, 첫번째 함수는 성공 시, 두번째 함수는 실패시 호출 된다. then은 Promise를 반환한다.
 - catch: 에러가 발생하면 호출되며, then의 두번째 인자와 같은 역할을 한다. catch는 Promise를 반환한다.
 
->※ 첫번째 콜백 함수 내부에서 오류가 날경우, 오류를 제대로 잡지 못하는 경우도 있으므로, 가급적 에러처리는 catch()통해 하는게 좋다.
+> ※ 첫번째 콜백 함수 내부에서 오류가 날경우, 오류를 제대로 잡지 못하는 경우도 있으므로, 가급적 에러처리는 catch()통해 하는게 좋다.
 
 ## 🔸 프로미스(Promise)의 상태
 
@@ -89,10 +91,11 @@ Promise는 대표적으로 다음과 같은 3가지 상태를 가진다.
 - Pending(대기): 비동기 처리 로직이 아직 미완료인 상태
 - Fulfilled(이행): 비동기 처리가 완료되어 promise가 결과 값을 반환해준 상태
 - Rejected(실패): 비동기 처리가 실패하거나 오류가 발생한 상태
-  
+
 ### ◾ Pending 상태
 
 아래와 같이 Promise를 호출하면 Pending 상태가 된다. 이때 콜백 함수의 인자로 resolve, reject에 접근할 수 있다.
+
 ```
 new Promise(function(resolve, reject){
     // ...
@@ -102,13 +105,14 @@ new Promise(function(resolve, reject){
 ### ◾ Fulfilled 상태
 
 콜백 함수의 인자 `resolve`를 실행하면 Fulfilled 상태가 된다. (완료 상태)
+
 ```
 new Promise(function (resolve, reject) {
    resolve();
 });
 ```
-이후 이행 상태가 되면 `then()`을 이용해 처리 결과 값을 받을 수 있다.
 
+이후 이행 상태가 되면 `then()`을 이용해 처리 결과 값을 받을 수 있다.
 
 ### ◾ Rejected 상태
 
@@ -119,15 +123,14 @@ new Promise(function(resolve, reject) {
   reject();
 });
 ```
+
 이후 실패 상태가 되면 `catch()`를 이용해 error를 다룰 수 있다.
 
 프로미스 처리 흐름을 그림으로보면 다음과 같다.
 
 <center><img src="./images/promise_1.png" alt="promise_1"/></center>
 
-
 정리하자면, Promise는 정해진 기능을 수행했을때, 정상적으로 이루어지면 성공, 예상치 못한 문제가 발생하면 에러를 전달해준다. 또 비동기 작업을 하는 함수의 리턴타입으로 쓰이며, 어떤 함수가 비동기적인 작업을 한다고 하면, 그 함수는 프로미스를 반환한다.
-
 
 # 🍪 어떻게 사용할까?
 
@@ -146,6 +149,7 @@ const devide = (num1, num2) => {
    })
 }
 ```
+
 위 함수는 나눌때 두번째 인자가 0이 아니면 `정상적인 값`을, 0이면 `에러`를 출력하는 Promise이다.
 
 ```
@@ -223,7 +227,7 @@ const getData = () => {
 
 Promise.all 메서드는 프로미스가 담겨있는 Array와 같이 순회 가능한 `이터러블`을 인자로 받는다. 그리고 전달받은 모든 Promise를 병렬로 처리하고 그 결과를 resolve하는 새로운 Promise를 반환한다.
 
-> Promise.all()은 배열 내 요소 중 어느 하나라도 reject되면 다른 프로미스의 이행 여부와 상관없이 즉시 reject한다. 
+> Promise.all()은 배열 내 요소 중 어느 하나라도 reject되면 다른 프로미스의 이행 여부와 상관없이 즉시 reject한다.
 
 ### 🧪 Promise.all 예제
 
@@ -267,9 +271,14 @@ const getData = () => {
          movies: movieJson,
          tvs: tvJson
       }
-   })  
+   })
 }
 ```
+
+### 🧬 연관 포스트
+
+- [Part1. 자바스크립트 비동기 Call Stack](https://spicycookie.me/JavaScript/callstack/)
+- [Part3. 비동기를 더 쉽게 다루는 async/await](https://spicycookie.me/JavaScript/asyncawait/)
 
 ## 🔍 Reference
 
