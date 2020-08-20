@@ -17,6 +17,10 @@ module.exports = {
       color: '#f38181',
     },
     {
+      name: 'React',
+      color: '#a8e6cf',
+    },
+    {
       name: '자료구조',
       color: '#a8d8ea',
     },
