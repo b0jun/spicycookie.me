@@ -20,25 +20,25 @@ React를 이해하기 앞서 프론트엔드 라이브러리에 대해서 알아
 
 일단, React 말고도 대표적으로 Angular, Vue 와 같은 여러가지 프론트엔드 라이브러리가 있다. 이것들에 대한 간단한 특징을 보자.
 
-### Angular
+### 🏷 Angular
 
 Angular는 Router, HTTP, 다국어 지원 등 다양한 기능들이 이미 내장되어있다. 마치 `모든 것이 준비되어 있는 주방`으로 app 개발에 필요한 모든 재료들을 가지고 있다. TypeScript를 주력으로 채택하여 정적 타입을 제공한다.
 
-### React
+### 🏷 React
 
 React는 Angular와 달리 가상 DOM을 이용하며 컴포넌트 기반 개발을 한다. 또한 사용자에게 전달되는 View만 신경쓰고 나머지 개발에 필요한 모듈들은 서드파티(Third party) 라이브러리에 의존한다. 마치 `피자에 원하는 토핑을 넣듯이` 사용자가 자유롭게 개발에 필요한 모듈을 결정하고 선택할 수 있다.
 
-### Vue
+### 🏷 Vue
 
 Vue는 React와 마찬가지로 가상 DOM을 사용해 컴포넌트 기반 개발을 중심으로한다. 그렇지만 React와 달리 공식 Router와 상태관리 라이브러리가 존재하며, HTML 마크업 기반의 템플릿 문법을 사용한다. 컴포넌트 구성요소와 구조를 쉽게 이해할 수 있는 장점이 있다.
 
-# 🍪 리액트에 특징에 대해서 살펴보자.
+# 🍪 리액트에 특징
 
-## One-Way Data Flow (단방향 데이터 흐름)
+## 📖 One-Way Data Flow (단방향 데이터 흐름)
 
 React에서는 `props`를 통해 부모 컴포넌트와 자식 컴포넌트간에 데이터를 전달할수 있는데, 데이터를 전달할 때 부모에서 자식에게로만 데이터 전달이 가능하다.
 
-## JSX 문법 사용
+## 📖 JSX 문법 사용
 
 자바스크립트를 확장한 문법으로, React.createElement() 호출을 반복해야 하는 불편을 해소한다.
 
@@ -56,18 +56,23 @@ const element = React.createElement('h1', {}, 'I do not use JSX!');
 ReactDOM.render(myelement, document.getElementById('root'));
 ```
 
-## Component 기반
+## 📖 Component 기반
 
 웹 페이지를 작성할때 하나의 HTML 코드를 집어넣는 것이 아니라, 여러 부분을 분할해서 코드의 `재사용성`과 `유지보수성`을 증가시켜준다.
 
-## Virtual DOM
+## 📖 Virtual DOM
 
 React에선 메모리 데이터 구조 캐시를 만들고, 변화된 부분을 계산하고 DOM을 업데이트 한다. 마치 모든 페이지가 변경될 때마다 렌더링되는 것처럼 보이게 한다.
 
-### Virtual DOM을 왜 사용하는 것일까?
+### 🤔 Virtual DOM을 왜 사용하는 것일까?
 
 실제로 DOM 조작에서 각 조작이 레이아웃 변화, 트리 변화와 렌더링을 일으킨다. 예를 들어 우리가 30개의 노드를 하나 하나 수정하면, 그 뜻은 30번의 (잠재적인) 레이아웃 재계산과 30번의 (잠재적인) 리렌더링을 초래한다는 것이다. 이러한 작업은 많은 연산을 해야되어서, 전체적인 프로세스를 비효율 적으로 만든다.
 
 Virtual DOM을 이용해서 Real DOM을 직접수정 하는 것이 아니라, View에 변화가 있다면, 그 변화를 실제 돔(Real DOM)에 적용시키기 전 가상 돔(Virtual DOM)에 적용시키고, 바뀐 부분을 탐지하고 업데이트해야할 최소한의 부분인 최종적인 결과를 리렌더링해서 실제 돔에 전달해준다.
 
-해당 영상을 보면 좀 더 이해가 잘 될 것이다. [Virtual DOM 동작 예시 | Youtube](https://www.youtube.com/watch?v=muc2ZF0QIO4&feature=youtu.be)
+해당 영상을 보면 좀 더 이해가 잘 될 것이다. 🎥 [Virtual DOM 동작 예시 | Youtube](https://www.youtube.com/watch?v=muc2ZF0QIO4&feature=youtu.be)
+
+## 🔍 Reference
+
+- [공식문서 | ReactJS](https://ko.reactjs.org/docs/)
+- [velopert | 왜 Virtual DOM 인가?](https://velopert.com/3236)
