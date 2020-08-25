@@ -254,12 +254,14 @@ class Counter extends Component {
 export default Counter;
 ```
 
-❗ 여기서 주의할 점은 리액트에서는 아래와같이 state에 직접접근해서 변경하면 리렌더링 하지않기 때문에 꼭 setState를 통해서 값을 변경해야된다는 것이다.
+❗ 여기서 주의할 점은 리액트에서는 아래와같이 state에 직접접근해서 변경하면 리렌더링 하지않기(라이프사이클 flow를 타지않기) 때문에 꼭 setState를 통해서 값을 변경해야된다는 것이다.
 
 ```
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
 handleIncrease = () => {
   this.state.number = this.state.number + 1;
 }
+❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
 ```
 
 <iframe src="https://codesandbox.io/embed/state-cq4h2?fontsize=14&theme=dark&view=preview"
