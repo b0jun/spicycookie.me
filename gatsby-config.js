@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const metaData = require('./gatsby-metadata');
 
 module.exports = {
@@ -52,6 +56,12 @@ module.exports = {
         theme_color: `#6b37bf`,
         display: `minimal-ui`,
         icon: metaData.icon,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
     `gatsby-plugin-offline`,
