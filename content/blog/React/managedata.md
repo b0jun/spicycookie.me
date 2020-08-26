@@ -605,11 +605,13 @@ handleToggleEdit = () => {
   const { user, onUpdate } = this.props;
   const { isEdit } = this.state;
   isEdit
-    ? onUpdate(user.id, {
+    ? // true → false: onUpdate
+      onUpdate(user.id, {
         name: this.state.name,
         email: this.state.email
       })
-    : this.setState({
+    : // false → true: state에 user값들 넣어주기
+      this.setState({
         name: this.state.name,
         email: this.state.email
       });
@@ -625,3 +627,8 @@ handleToggleEdit = () => {
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
+
+## 🔍 Reference
+
+- [velopert | 배열 다루기](https://react-anyone.vlpt.us/07.html)
+- [공식 문서 | Key](https://ko.reactjs.org/docs/lists-and-keys.html#keys)
