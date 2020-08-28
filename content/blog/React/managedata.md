@@ -92,6 +92,7 @@ input에 name값을 설정해준 후 setState를 호출할 때 `[e.target.name]:
 2. [배열 렌더링하기](#rendering)
 3. [배열에서 데이터 삭제하기](#delete)
 4. [배열에서 데이터 수정하기](#modify)
+5. [배열에서 데이터 검색하기](#search)
 
 그전에 먼저 컴포넌트에서 값을 전달하는 과정을 한번 보자.
 
@@ -627,6 +628,99 @@ handleToggleEdit = () => {
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
+
+## 배열에서 데이터 검색하기 <a id="search"></a>
+
+추가해준 데이터를 바탕으로 검색하는 것은 위에서 했던 것들을 조금만 활용하면 만들 수 있다.
+
+App.js에서 keyword state만 추가한 후 이를 다룰 수 있는 핸들러 함수와 input을 연결해 준후 단순히 UserTableList에 props를 내려보낼 때 filter시키면 된다.
+
+```
+/* App.js */
+state = {
+  users: [],
+  keyword: ""
+};
+```
+
+```
+handleChange = (e) => {
+  this.setState({
+    keyword: e.target.value
+  });
+};
+```
+
+```
+<>
+  <InputForm onCreate={this.handleCreate} />
+  <input
+    value={this.state.keyword}
+    onChange={this.handleChange}
+    placeholder="검색..."
+  />
+  <UserTableList
+    users={this.state.users.filter((user) =>
+      user.name.includes(this.state.keyword)
+    )}
+    onRemove={this.handleRemove}
+    onUpdate={this.handleUpdate}
+  />
+</>
+
+```
+
+<iframe src="https://codesandbox.io/embed/managedata06-vxw8q?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="managedata_06"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+# 🍪 최적화하기
+
+각 코드에 console.log를 찍어 렌더링될때마다 무엇이 찍히는지 확인해보자.
+
+```
+/* UserTableList.js*/
+render() {
+  const { users, onRemove, onUpdate } = this.props;
+  console.log('Rendering UserTableList');
+  return (
+```
+
+```
+/* UserTable.js*/
+...
+render() {
+  const { name, email } = this.props.user;
+  const { isEdit } = this.state;
+  console.log(name);
+  return (
+...
+```
+
+<center><img src="./images/managedata_4.png" alt="managedata_4"/></center>
+
+값을 추가할 때마다 "Rendering UserTableList"가 발생하는데, 기존에 있던 데이터도 한번 더 렌더링된다. 굳이 추가되지 않은 데이터를 렌더링 시킬필요가 없는데, 이때 shouldComponentUpdate를 통해 최적화를 시킬 수 있다.
+
+## 🧹 shouldComponentUpdate를 통한 최적화
+
+여기서 하고자하는 작업은 업데이트가 불필요할 때에는 업데이트 하지않는 것이다.
+
+```
+/* UserTable.js*/
+shouldComponentUpdate(nextProps, nextState) {
+  if(this.state !== nextState){
+    return true;
+  }
+  return this.props.user !== nextProps.user;
+}
+```
+
+현재 오는값과 다음으로 오는 값이 다를 경우에만 업데이트가 일어난다.
+
+<center><img src="./images/managedata_5.png" alt="managedata_5"/></center>
 
 ## 🔍 Reference
 
