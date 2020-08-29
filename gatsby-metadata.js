@@ -2,7 +2,7 @@ module.exports = {
   title: `Spicy Cookie Tech Blog`,
   author: `Byeong Jun, Kim`,
   occupation: `Web Developer`,
-  description: `Hello, I'm Web Developer.`,
+  description: `리액트 개발자를 목표로 꾸준히 블로깅 중입니다.`,
   siteUrl: `https://spicycookie.me`,
   email: `bjkim0228@naver.com`,
   social: {
