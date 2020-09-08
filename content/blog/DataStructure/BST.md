@@ -1,7 +1,7 @@
 ---
 title: 'BST(이진 탐색 트리) 다루기'
 date: '2020-07-27'
-category: '자료구조'
+category: 'DataStructure'
 cover: '../images/bst.png'
 private: false
 ---

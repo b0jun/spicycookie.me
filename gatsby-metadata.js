@@ -21,7 +21,11 @@ module.exports = {
       color: '#a8e6cf',
     },
     {
-      name: '자료구조',
+      name: 'Node.js',
+      color: '#a8e6cf',
+    },
+    {
+      name: 'DataStructure',
       color: '#a8d8ea',
     },
     {
