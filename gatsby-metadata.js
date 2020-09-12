@@ -22,7 +22,7 @@ module.exports = {
     },
     {
       name: 'Node.js',
-      color: '#a8e6cf',
+      color: '#8785a2',
     },
     {
       name: 'DataStructure',
