@@ -16,14 +16,14 @@ ORM(Object-Relational Mapping)은 데이터베이스와 데이터베이스 안�
 
 ## ORM의 장단점
 
-### 장점
+### 🙉 장점
 
 - 객체지향적인 코드로 더 직관적이고 비즈니스 로직에 더 집중할 수 있다.
 - DBMS에 대한 종속성이 줄어든다.
 - 재사용 및 유지보수의 편리성이 증가한다.
 - 데이터베이스 마이그레이션을 쉽게 할 수 있다.
 
-### 단점
+### 🙈 단점
 
 - 모든 것을 ORM을 통해서만 구현하는 것은 힘들다.
 - 프로시저가 많은 시스템에선 ORM의 객체 지향적인 장점을 활용하기 어렵다.
@@ -66,7 +66,7 @@ sequelize와 sequelize에서 선택하고자 하는 데이터베이스 엔진을
 $ yarn add sequelize mysql2
 ```
 
-### Sequelize에서 "선택"할 수 있는 RDBMS
+### ◼ Sequelize에서 "선택"할 수 있는 RDBMS
 
 <pre>
 <code>
@@ -78,7 +78,7 @@ $ yarn add tedious // MS SQL Server
 </code>
 </pre>
 
-### Sequelize CLI를 설치해 마이그레이션 준비하기
+### ◼ Sequelize CLI를 설치해 마이그레이션 준비하기
 
 Sequelize의 마이그레이션을 활용하면 Git과 같은 버전제어가 가능해진다. 이를 이용하기 위해 `sequelize-cli`를 설치해주자.
 
@@ -135,7 +135,7 @@ $ npx sequelize init
 </code>
 </pre>
 
-### ① config 설정
+### 🔥 ① config 설정
 
 해당 파일은 DB서버와의 연결 설정을 기술하는 곳이라고 했었다. `config.js`파일을 보면 기본적으로 json형식으로 되어있는데, js형식으로 다음처럼 전부 바꿔주자.
 
@@ -184,7 +184,7 @@ $ export NODE_ENV=production //배포용
 
 또한 sequelize-cli는 default로 mysql을 다루며, 다른 RDBMS를 다룬다면 `dialect`값을 변경 해주어야한다.
 
-### ② DB 생성
+### 🔥 ② DB 생성
 
 생성한 데이터베이스가 없다면 config 설정에 따른 데이터베이스를 생성해주면 된다.
 
@@ -194,7 +194,7 @@ $ npx sequelize db:create
 Database mydb created.
 ```
 
-### ③ 모델 생성
+### 🔥 ③ 모델 생성
 
 여기까지 했다면, 이제 첫번째 마이그레이션을 만들 준비가 된 것이다. 모델을 생성하기 전에 이미 models 안에 index.js파일이 있을 것이다. 이 파일에 대한 설명은 [ZeroCho | models index.js 파일 설명](https://youtu.be/vMXnXXfFm-I?t=327)에서 볼 수 있다.
 
@@ -237,7 +237,7 @@ module.exports = (sequelize, DataTypes) => {
 
 여기서 init 메서드는 테이블에 대한 설정을 하고, associate메서드에는 다른 모델과의 관계(1:1, 1:N, N:N)를 적는다.
 
-#### MySQL vs 시퀄라이즈 자료형
+#### 💡 MySQL vs 시퀄라이즈 자료형
 
 | MySQL         | 시퀄라이즈                  |
 | ------------- | --------------------------- |
@@ -250,11 +250,11 @@ module.exports = (sequelize, DataTypes) => {
 | UNIQUE        | unique: true                |
 | DEFAULT now() | defaultValue: Sequelize.NOW |
 
-### ④ Association 설정
+### 🔥 ④ Association 설정
 
 Sequelize의 [Association](https://sequelize.org/master/manual/assocs.html)은 관계형 데이터베이스의 JOIN과 같이 관계성을 갖는 데이터들을 처리하기 위해 사용하는 것이다. 즉 1:1, 1:N, N:N의 관계를 정의해주는 곳이다.
 
-#### type
+#### 💡 Type
 
 - HasOne
 - BelongsTo
