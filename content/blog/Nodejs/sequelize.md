@@ -95,7 +95,7 @@ $ yarn add global sequelize-cli
 const path = require('path');
 
 module.exports = {
-    'config': path.resolve('src/db/config/config.json'),
+    'config': path.resolve('src/db/config/config.js'),
     'models-path': path.resolve('src/db/models'),
     'seeders-path': path.resolve('src/db/seeders'),
     'migrations-path': path.resolve('src/db/migrations')
@@ -122,7 +122,7 @@ $ npx sequelize init
 └── src
     ├── db
     │   ├── config
-    │   │   └── config.json
+    │   │   └── config.js
     │   ├── migrations
     │   ├── models
     │   │   └── index.js
@@ -137,10 +137,10 @@ $ npx sequelize init
 
 ### ① config 설정
 
-해당 파일은 DB서버와의 연결설정을 기술하는 곳이라고 했었다. `config.json`파일을 보면 다음과 같이 있다.
+해당 파일은 DB서버와의 연결 설정을 기술하는 곳이라고 했었다. `config.js`파일을 보면 기본적으로 json형식으로 되어있는데, js형식으로 다음처럼 전부 바꿔주자.
 
 ```
-/* config.json */
+/* config.js */
 {
   "development": {
     "username": "root",
@@ -166,7 +166,13 @@ $ npx sequelize init
 }
 ```
 
-development, test, production 이렇게 총 3가지 모드를 가지며, 기본적으로 development을 사용한다(models/index.js에 명시). 이 환경변수를 변경하기 위해선 다음과 같이 할 수 있다.
+보여선 안되는 정보인 패스워드는 위와같이 env로 설정하자. 그리고 development, test, production 이렇게 총 3가지 모드를 가지며, 기본적으로 development을 사용한다. 이 역시도 `models/index.js`에 env파일을 통해 환경변수로 설정되어있다.
+
+#### ⚙ env 설정
+
+env파일을 다루는 방법은 [dotenv](https://www.npmjs.com/package/dotenv)를 설치해 .env파일을 만들어 .gitignore를 통해 관리하거나, export 명령어를 통해 설정 할 수 있다. 간단하게 export 명령어를 사용하자.
+
+만약 모드를 변경하고자 한다면 다음과 같이 바꿔줄 수 있다.
 
 ```
 $ export NODE_ENV=development //개발용
@@ -283,7 +289,7 @@ static associate(models) {
 ...
 ```
 
-위에서 associate를 실행하기 위해 model을 변경했는데, migrations 디렉터리에 있는 파일 역시도 직접 수정해줘야 데이터베이스에 같은 설정으로 삽입된다.
+위에서 associate를 설정하기 위해 model들을 변경했었는데, migrations 디렉터리에 있는 파일 역시도 직접 수정해줘야 데이터베이스에 같은 설정으로 삽입된다.
 
 ```
 /* migrations/[comment의 마이그레이션 파일] */
@@ -291,7 +297,7 @@ static associate(models) {
 userId: {
   type: Sequelize.INTEGER,
   references: {
-    model: "Users", //
+    model: "Users",
     key: "id",
   }
 }
@@ -326,3 +332,6 @@ $ npx sequelize db:migrate:undo:all // 모든 마이그레이션 취소
 ## 🔍 Reference
 
 - [graphql-seoul | 마이그레이션과 Sequelize-CLI 튜토리얼](https://medium.com/graphql-seoul/%EB%B2%88%EC%97%AD-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98%EA%B3%BC-sequelize-cli-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-3926c0a9eae6)
+- [eddev | Sequelize-cli와 PostgreSQL를 이용해서 데이터 Migration 및 Seed하기](https://velog.io/@eddie_kim/Sequelize-cli%EC%99%80-PostgreSQL%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-Migration-%EB%B0%8F-Seed%ED%95%98%EA%B8%B0)
+- [윤자이 | Sequelize : ORM(Object-relational Mapping) 사용해보기](https://ooeunz.tistory.com/71)
+- [jeff0720 | Sequelize CLI를 사용하여 User API 만들기](https://velog.io/@jeff0720/Sequelize-CLI%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EA%B0%84%EB%8B%A8%ED%95%9C-User-API-%EB%A7%8C%EB%93%A4%EA%B8%B0-vdjpb8nl0k)
