@@ -2,8 +2,8 @@
 title: 'Sequelize ORM'
 date: '2020-09-08'
 category: 'Node.js'
-cover: '../images/default.jpg'
-private: true
+cover: './images/sequelize_cover.png'
+private: false
 ---
 
 <center><img src="./images/sequelize_1.png" alt="sequelize_1" /></center>
@@ -34,7 +34,7 @@ ORM(Object-Relational Mapping)은 데이터베이스와 데이터베이스 안�
 
 <center><img src="./images/sequelize_2.png" alt="sequelize_2" /></center>
 
-Sequelize는 기본적으로 프로미스 기반(promise-based)으로된 Node.js ORM 이다. 지원하는 RDBMS들은 다음과 같이 있다.
+Sequelize는 기본적으로 프로미스 기반(promise-based)으로된 Node.js ORM 이다. 지원하는 데이터베이스들은 다음과 같이 있다.
 
 지원하는 RDBMS
 
@@ -44,13 +44,13 @@ Sequelize는 기본적으로 프로미스 기반(promise-based)으로된 Node.js
 - SQLite
 - Microsoft SQL Server.
 
-Sequelize는 자바스크립트 구문을 알아서 SQL로 변환해준다. 어느 정도 문법이 호환되므로 동일한 ORM 코드를 사용하면서, 다른 RDBMS로의 전환을 비교적 자유롭게 할 수 있다..
+Sequelize는 자바스크립트 구문을 알아서 SQL로 변환해준다. 어느 정도 문법이 호환되므로 동일한 ORM 코드를 사용하면서, 다른 데이터베이스로의 전환을 비교적 자유롭게 할 수 있다..
 
-# 🍪 Sequelize 실습
+# 🍪 Sequelize로 테이블 만들기
 
 [공식 문서](https://sequelize.org/master/index.html)를 바탕으로 Sequelize를 실습해보자.
 
-## 프로젝트 초기 세팅
+## ⚙ 프로젝트 초기 세팅
 
 프로젝트를 시작하고자 하는 디렉터리에서 node를 initialize 하자.
 
@@ -58,41 +58,7 @@ Sequelize는 자바스크립트 구문을 알아서 SQL로 변환해준다. 어�
 $ npm init -y
 ```
 
-기본적인 환경은 express를 통해 진행할 것이므로 `express`와 `body-parser`, `morgan`을 설치해주자.
-
-- body-parser(request data의 body로부터 파라미터를 편리하게 추출가능)
-- morgan(HTTP request logger middleware)
-
-```
-$ yarn add express body-parser morgan
-```
-
-app.js 파일을 만들어 기본적인 express를 구성해주자.
-
-```
-/* app.js */
-const express = require("express");
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
-
-const app = express();
-const PORT = 5000;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(morgan("tiny"));
-
-app.get("/", (req, res) => {
-  res.status(200).send("Test");
-});
-
-app.set("PORT", PORT);
-app.listen(5000, () => {
-  console.log(`listening on ${app.settings.PORT}`);
-});
-```
-
-## Sequelize 시작하기
+## 🏃 Sequelize 시작하기
 
 sequelize와 sequelize에서 선택하고자 하는 데이터베이스 엔진을 수동으로 설치해준다. mysql를 통해 실습할 것이기 때문에 이에 맞게 설치해주자.
 
@@ -100,7 +66,7 @@ sequelize와 sequelize에서 선택하고자 하는 데이터베이스 엔진을
 $ yarn add sequelize mysql2
 ```
 
-### Sequelize에서 선택할 수 있는 RDBMS
+### Sequelize에서 "선택"할 수 있는 RDBMS
 
 <pre>
 <code>
@@ -112,7 +78,7 @@ $ yarn add tedious // MS SQL Server
 </code>
 </pre>
 
-## Sequelize CLI를 설치해 마이그레이션 준비하기
+### Sequelize CLI를 설치해 마이그레이션 준비하기
 
 Sequelize의 마이그레이션을 활용하면 Git과 같은 버전제어가 가능해진다. 이를 이용하기 위해 `sequelize-cli`를 설치해주자.
 
@@ -120,7 +86,7 @@ Sequelize의 마이그레이션을 활용하면 Git과 같은 버전제어가 �
 $ yarn add global sequelize-cli
 ```
 
-## 프로젝트 Bootstrapping
+## 🕵 프로젝트 Bootstrapping
 
 프로젝트를 초기화하기위해 init 명령어를 입력해주어야 하는데, 그 전에 프로젝트 최상위에 `.sequelizerc`를 추가해 sequelize config를 만들어 생성되는 디렉터리, 파일 구조를 미리 변경해주자.
 
@@ -163,7 +129,6 @@ $ npx sequelize init
     │   └── seeders
     └── index.js
 ├── .sequelizerc
-├── app.js
 ├── package.json
 ├── yarn.lock
 ├── yarn-error.log
@@ -201,16 +166,15 @@ $ npx sequelize init
 }
 ```
 
-development, test, production 이렇게 총 3가지 모드를 가지며, 기본적으로 development을 사용한다(models/index.js에 명시). 이 환경변수를 변경하기 위해선
-다음과 같이 할 수 있다.
+development, test, production 이렇게 총 3가지 모드를 가지며, 기본적으로 development을 사용한다(models/index.js에 명시). 이 환경변수를 변경하기 위해선 다음과 같이 할 수 있다.
 
 ```
-$ export NODE_ENV=development
-$ export NODE_ENV=test
-$ export NODE_ENV=production
+$ export NODE_ENV=development //개발용
+$ export NODE_ENV=test //테스트용
+$ export NODE_ENV=production //배포용
 ```
 
-`username`과 `password`에는 mysql 계정을 입력해주고, database에는 사용하고자 하는 Database를 작성해준다.
+`username`과 `password`에는 mysql 계정을 입력해주고, `database`에는 사용하고자 하는 Database를 작성해준다.
 
 또한 sequelize-cli는 default로 mysql을 다루며, 다른 RDBMS를 다룬다면 `dialect`값을 변경 해주어야한다.
 
@@ -220,23 +184,121 @@ $ export NODE_ENV=production
 
 ```
 $ npx sequelize db:create
-~~~
+...
 Database mydb created.
 ```
 
 ### ③ 모델 생성
 
-여기까지 했다면, 이제 첫번째 마이그레이션을 만들 준비가 된 것이다. `model:generate`를 통해 모델을 생성해주자. 여기서 만약 모델을 잘못 생성했을 경우, 생성된 파일을 직접 수정하거나 삭제 후 명령을 다시 실행할 수 있다.
+여기까지 했다면, 이제 첫번째 마이그레이션을 만들 준비가 된 것이다. 모델을 생성하기 전에 이미 models 안에 index.js파일이 있을 것이다. 이 파일에 대한 설명은 [ZeroCho | models index.js 파일 설명](https://youtu.be/vMXnXXfFm-I?t=327)에서 볼 수 있다.
+
+`model:generate`를 통해 모델을 생성해주자. 여기서 만약 모델을 잘못 생성했을 경우, 생성된 파일을 직접 수정하거나 삭제 후 명령을 다시 실행할 수 있다.
 
 (OPTION: name: 모델 명, attributes: 모델 속성)
 
+> 📖 User는 여러개의 Comment를 가지고, Comment는 하나의 User를 가진다. (One-To-Many)
+
 ```
 $ npx sequelize model:generate --name User --attributes name:string,email:string
+$ npx sequelize model:generate --name Comment --attributes comment:text,userId:integer
 ```
 
-> id, createdAt, updatedAt 필드는 자동으로 생성된다.
+> 💡 id, createdAt, updatedAt 필드는 자동으로 생성된다.
 
-### ④ 마이그레이션 실행
+```
+/* models/user.js */
+"use strict";
+const { Model } = require("sequelize");
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    static associate(models) {
+      // define association here
+    }
+  }
+  User.init(
+    {
+      name: DataTypes.STRING,
+      email: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "User",
+    }
+  );
+  return User;
+};
+```
+
+여기서 init 메서드는 테이블에 대한 설정을 하고, associate메서드에는 다른 모델과의 관계(1:1, 1:N, N:N)를 적는다.
+
+#### MySQL vs 시퀄라이즈 자료형
+
+| MySQL         | 시퀄라이즈                  |
+| ------------- | --------------------------- |
+| VARCHAR(100)  | STRING(100)                 |
+| INT           | INTEGER                     |
+| TINYINT       | BOOLEAN                     |
+| DATETIME      | DATE                        |
+| INT UNSIGNED  | INTEGER.UNSIGNED            |
+| NOT NULL      | allowNull: false            |
+| UNIQUE        | unique: true                |
+| DEFAULT now() | defaultValue: Sequelize.NOW |
+
+### ④ Association 설정
+
+Sequelize의 [Association](https://sequelize.org/master/manual/assocs.html)은 관계형 데이터베이스의 JOIN과 같이 관계성을 갖는 데이터들을 처리하기 위해 사용하는 것이다. 즉 1:1, 1:N, N:N의 관계를 정의해주는 곳이다.
+
+#### type
+
+- HasOne
+- BelongsTo
+- HasMany
+- BelongsToMany
+
+<pre>
+<code>
+1:1 관계 를 구현하기 위해 hasOne와 belongsTo이 함께 사용
+1:N 관계 를 구현하기 위해 hasMany와 belongsTo이 함께 사용
+N:N 관계 를 구현하기 위해 두 개의 belongsToMany이 함께 사용
+</code>
+</pre>
+
+models 파일에서 테이블들의 association를 다음과 같이 작성해주자.
+
+```
+/* models/user.js */
+...
+static associate(models) {
+  this.hasMany(models.Comment, { foreignKey: "userId", sourceKey: "id" });
+}
+...
+```
+
+```
+/* models/comment.js */
+...
+static associate(models) {
+  this.belongsTo(models.User, { foreignKey: "userId", targetKey: "id" });
+}
+...
+```
+
+위에서 associate를 실행하기 위해 model을 변경했는데, migrations 디렉터리에 있는 파일 역시도 직접 수정해줘야 데이터베이스에 같은 설정으로 삽입된다.
+
+```
+/* migrations/[comment의 마이그레이션 파일] */
+...
+userId: {
+  type: Sequelize.INTEGER,
+  references: {
+    model: "Users", //
+    key: "id",
+  }
+}
+...
+```
+
+### ⑤ 마이그레이션 실행
 
 모델만 생성했다고 실제 데이터베이스에 값이 삽입되지않는다. 위 작업을 통해 마이그레이션을 실행할 수 있는 준비를 끝마쳤기 때문에, `db:migrate` 명령을 실행해 마이그레이션을 실행해준다.
 
@@ -244,13 +306,22 @@ $ npx sequelize model:generate --name User --attributes name:string,email:string
 $ npx sequelize db:migrate
 ```
 
-#### 만약 마이그레이션을 취소하려면??
+성공했다면 데이터베이스에 정상적으로 테이블이 만들어졌을 것이다.
 
-마이그레이션 undo하면 down이 실행
+#### 🤔 만약 마이그레이션을 취소하려면??
 
-마이그레이션:
+마이그레이션 undo하면 down이 실행되고 모두 취소할려면 뒤에 all만 붙여주면 된다.
 
-npx db:migrate:status
+```
+$ npx sequelize db:migrate:undo // 가장 최근 마이그레이션 취소
+$ npx sequelize db:migrate:undo:all // 모든 마이그레이션 취소
+```
+
+> undo를 실행하면 마이그레이션 파일의 down 메서드가 실행된다.
+
+여기까지 마이그레이션을 완료했다면 설정했던 데이터베이스에 테이블이 다음과 같이 정상적으로 생성됨을 볼 수 있다.
+
+<center><img src="./images/sequelize_3.png" alt="sequelize_3" /></center>
 
 ## 🔍 Reference
 
