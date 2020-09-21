@@ -271,7 +271,7 @@ const rootReducer = combineReducers({
 스토어를 만들 때는 `createStore` 함수를 사용한다. 이를 사용하기 위해선 모듈을 불러와야하며, 함수의 파라미터에는 리듀서 함수를 넣어줘야 한다.
 
 ```
-/* src/modules/index.js */
+/* src/index.js */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
@@ -289,7 +289,7 @@ ReactDOM.render(<App />, rootElement);
 `Provider` 컴포넌트를 사용해 프로젝트에 리덕스를 적용해줘야한다.
 
 ```
-/* src/modules/index.js */
+/* src/index.js */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
@@ -333,7 +333,7 @@ $ yarn add redux-devtools-extension
 </pre>
 
 ```
-/* src/modules/index.js */
+/* src/index.js */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
