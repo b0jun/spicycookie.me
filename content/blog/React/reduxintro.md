@@ -317,7 +317,8 @@ ReactDOM.render(
 ### ☝ [First way] 코드만 삽입
 
 ```
-const = createStore(
+/* src/index.js */
+const store= createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
