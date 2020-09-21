@@ -141,29 +141,29 @@ $ npx sequelize init
 
 ```
 /* config.js */
-{
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+module.exports = {
+  development: {
+    username: "root",
+    password: null,
+    database: "database_development",
+    host: "127.0.0.1",
+    dialect: "mysql"
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+  test: {
+    username: "root",
+    password: null,
+    database: "database_test",
+    host: "127.0.0.1",
+    dialect: "mysql"
   },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+  production: {
+    username: "root",
+    password: null,
+    database: "database_production",
+    host: "127.0.0.1",
+    dialect: "mysql"
   }
-}
+};
 ```
 
 보여선 안되는 정보인 패스워드는 위와같이 env로 설정하자. 그리고 development, test, production 이렇게 총 3가지 모드를 가지며, 기본적으로 development을 사용한다. 이 역시도 `models/index.js`에 env파일을 통해 환경변수로 설정되어있다.
