@@ -29,6 +29,10 @@ module.exports = {
       color: '#a8d8ea',
     },
     {
+      name: 'Algorithm',
+      color: '#d6d2c4',
+    },
+    {
       name: 'sample',
       color: '#bfd4fe',
     },
