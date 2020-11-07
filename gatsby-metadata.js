@@ -33,6 +33,10 @@ module.exports = {
       color: '#d6d2c4',
     },
     {
+      name: 'Essay',
+      color: '#f08a5d',
+    },
+    {
       name: 'sample',
       color: '#bfd4fe',
     },
