@@ -3,12 +3,14 @@ title: 'Stack 자료구조 다루기'
 date: '2020-07-24'
 category: 'DataStructure'
 cover: '../images/stack.png'
-private: true
+private: false
 ---
 
-## 🧵 스택의 정의
+## 🧵 스택(Stack)의 정의
 
 스택은 한쪽 끝에서만 데이터를 넣고 뺄 수 있기 때문에 LIFO(Last-In, First-Out), 즉 후입선출 형식을 가진 자료구조이다. 
+
+<img src="https://i.ibb.co/9hW5F5p/stack.gif" alt="stack">
 
 ## 🎨 스택의 ADT
 
@@ -26,10 +28,78 @@ private: true
 
 ## 💻 스택의 구현
 
-스택은 배열을 통해서도 구현도 가능하고, 연결 리스트를 통해서도 구현이 가능하다. 
+스택은 배열, 객체을 통해서도 구현도 가능하고, 연결 리스트를 통해서도 구현이 가능하다. 여기서는 배열, 객체를 통해 다루는 것만 해볼 것이다.
 
 ### 배열을 통한 구현
 
-### 연결 리스트를 통한 구현
+```
+class Stack {
+  constructor() {
+    this.storage = [];
+    this.topIndex = -1;
+  }
+  isEmpty(){
+    return this.topIndex === -1 ? true : false
+  }
+  push(data) {
+    this.topIndex += 1;
+    this.storage[this.topIndex] = data;
+  }
+  
+  pop() {
+    if(this.isEmpty()) {
+      console.log('Empty!');
+      return;
+    }
+    const result = this.storage[this.topIndex];
+    this.storage = this.storage.slice(0, this.topIndex);
+    this.topIndex -= 1;
+    return result;
+  }
+
+  peek() {
+    if(this.isEmpty()){
+      console.log('Empty!');
+      return;
+    }
+    return this.storage[this.topIndex];
+  }
+}
+```
+
+### 객체를 통한 구현
+
+```
+class Stack {
+  constructor() {
+    this.storage = {};
+    this.top = -1;
+  }
+
+  isEmpty() {
+    return this.top === -1 ? true : false;
+  }
+
+  push(data) {
+    this.top += 1;
+    this.storage[this.top] = element;
+  }
+
+  pop() {
+    if (this.isEmpty()) {
+      console.log('Empty!');
+      return;
+    }
+
+    const result = this.storage[this.top];
+    delete this.storage[this.top];
+    this.top -= 1;
+
+    return result;
+  }
+}
+```
 
 ## 🔍 Reference
+
+- 윤성우의 열혈 자료구조 (저자: 윤성우)
