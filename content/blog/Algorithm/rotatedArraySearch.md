@@ -2,11 +2,11 @@
 title: '회전된 배열에서 이진검색'
 date: '2020-08-14'
 category: 'Algorithm'
-cover: '../images/default.jpg'
 private: false
 ---
 
 ## 📖 문제 설명
+
 정렬되어 있는 배열 중 일부를 왼쪽 혹은 오른쪽으로 회전시킨 배열이 주어졌을때, 어떻게 하면 특정 값을 효율적으로 찾을 수 있을까?
 
 - target의 index값을 리턴한다.
@@ -24,7 +24,7 @@ rotatedArraySearch([4, 5, 6, 0, 1, 2, 3], 100) === null;
 ```
 const rotatedArraySearch = function (rotated, target) {
   let left = 0, right = rotated.length - 1;
-  
+
   // left 와 right가 같아지는 시점은 모든 검사가 종료되는 시점
   while(left <= right){
     let mid = Math.floor((left + right) / 2);
@@ -40,7 +40,7 @@ const rotatedArraySearch = function (rotated, target) {
         left = mid + 1;
       }
     }
-    
+
     else if(rotated[left] > rotated[mid]){
       if(rotated[mid] < target && target <= rotated[right]){
         left = mid + 1;

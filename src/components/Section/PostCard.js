@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-
+import default_img from '../../../content/blog/images/default.jpg';
 const Block = styled.div`
   font-size: 3rem;
   margin-bottom: 1.5rem;
@@ -58,6 +58,11 @@ const Cover = styled.div`
     width: 100%;
     height: 100%;
   }
+`;
+
+const DefaultImage = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 const Info = styled.div`
   width: calc(100% - 180px);
@@ -149,7 +154,7 @@ const PostWrapper = styled.div`
 const PostCard = ({ post, categories }) => {
   const { title, date, category } = post.frontmatter;
   const { excerpt } = post;
-  const cover = post.frontmatter.cover.childImageSharp.fluid;
+  const cover = post.frontmatter.cover?.childImageSharp.fluid;
   let labelColor; // set Label Color
   categories.forEach(el => {
     if (el.name === category) {
@@ -161,7 +166,7 @@ const PostCard = ({ post, categories }) => {
       <Link to={post.fields.slug}>
         <PostWrapper>
           <Cover>
-            <Img fluid={cover} />
+            {cover ? <Img fluid={cover} /> : <DefaultImage src={default_img} alt="default_img" />}
           </Cover>
           <Info>
             <Title>{title}</Title>

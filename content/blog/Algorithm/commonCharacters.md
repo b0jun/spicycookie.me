@@ -2,7 +2,6 @@
 title: '공통으로 가지고 있는 문자열을 찾기'
 date: '2020-08-10'
 category: 'Algorithm'
-cover: '../images/default.jpg'
 private: false
 ---
 

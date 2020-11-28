@@ -2,7 +2,6 @@
 title: 'Sequelize'
 date: '2020-09-13'
 category: 'Node.js'
-cover: '../images/default.jpg'
 private: true
 ---
 

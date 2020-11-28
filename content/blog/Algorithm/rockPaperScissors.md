@@ -2,7 +2,6 @@
 title: '가위바위보 경우의 수'
 date: '2020-08-02'
 category: 'Algorithm'
-cover: '../images/default.jpg'
 private: false
 ---
 

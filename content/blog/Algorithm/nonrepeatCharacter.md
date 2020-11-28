@@ -2,7 +2,6 @@
 title: '최초로 반복하지 않는 문자열'
 date: '2020-08-03'
 category: 'Algorithm'
-cover: '../images/default.jpg'
 private: false
 ---
 

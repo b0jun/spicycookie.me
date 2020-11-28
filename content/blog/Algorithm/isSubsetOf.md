@@ -2,7 +2,6 @@
 title: '두 배열 부분집합 여부 체크'
 date: '2020-08-04'
 category: 'Algorithm'
-cover: '../images/default.jpg'
 private: false
 ---
 
