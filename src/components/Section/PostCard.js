@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import default_img from '../../../content/blog/images/default.jpg';
+
 const Block = styled.div`
   font-size: 3rem;
   margin-bottom: 1.5rem;
