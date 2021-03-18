@@ -33,7 +33,7 @@ const githubStyles = css`
   h5,
   h6 {
     font-family: 'InfinitySans-CondBoldA1', arial, sans-serif;
-    margin: 20px 0 10px;
+    margin: 30px 0 20px;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     cursor: text;
@@ -125,7 +125,7 @@ const githubStyles = css`
   dl,
   li,
   table {
-    margin: 15px 0;
+    margin: 20px 0;
     line-height: 1.7;
   }
 

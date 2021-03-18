@@ -2,7 +2,7 @@ module.exports = {
   title: `Spicy Cookie Tech Blog`,
   author: `Byeong Jun, Kim`,
   occupation: `Web Developer`,
-  description: `리액트 개발자를 목표로 꾸준히 블로깅 중입니다.`,
+  description: `React & RN FrontEnd 관련 `,
   siteUrl: `https://spicycookie.me`,
   email: `bjkim0228@naver.com`,
   social: {
@@ -21,16 +21,16 @@ module.exports = {
       color: '#a8e6cf',
     },
     {
+      name: 'ReactNative',
+      color: '#d6d2c4',
+    },
+    {
       name: 'Node.js',
       color: '#8785a2',
     },
     {
       name: 'DataStructure',
       color: '#a8d8ea',
-    },
-    {
-      name: 'Algorithm',
-      color: '#d6d2c4',
     },
     {
       name: 'Essay',

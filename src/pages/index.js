@@ -16,7 +16,7 @@ const IndexPage = ({ data, location: { pathname } }) => {
             return <PostCard key={node.fields.slug} post={node} categories={categories} />;
           })
         : posts
-            .filter(({ node }) => decodePathname.indexOf(`${node.frontmatter.category}`) !== -1)
+            .filter(({ node }) => decodePathname.split('/')[2] === node.frontmatter.category)
             .map(({ node }) => (
               <PostCard key={node.fields.slug} post={node} categories={categories} />
             ))}
