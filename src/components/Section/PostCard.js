@@ -172,6 +172,9 @@ const Block = styled.div`
     width: calc(50% - 1.4rem);
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    &:hover {
+      transform: unset;
+    }
     width: 100%;
     margin: 0;
     margin-bottom: 1rem;
