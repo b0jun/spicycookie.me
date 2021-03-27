@@ -5,8 +5,8 @@ const responsive = {
   largest: '1024px',
 };
 const sizes = {
-  maxWidth: '1100px',
-  profileWidth: '300px',
+  maxWidth: '1200px',
+  profileWidth: '230px',
 };
 
 const sideSpace = {

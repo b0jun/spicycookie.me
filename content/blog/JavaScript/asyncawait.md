@@ -1,5 +1,6 @@
 ---
 title: '비동기를 더 쉽게 다루는 async / await'
+subtitle: '비동기를 더 쉽게 다룰 수 있는 async / await를 분석해봅시다.'
 date: '2020-08-17'
 category: 'JavaScript'
 cover: './images/asyncawait_cover.png'

@@ -1,5 +1,6 @@
 ---
 title: '[JS] ES6 클래스와 상속'
+subtitle: 'ES6에서 소개된 클래스에 대하여 알아봅시다.'
 date: '2020-07-30'
 category: 'JavaScript'
 cover: '../images/es6.png'
@@ -56,6 +57,7 @@ const car = Car(); // TypeError
 constructor는 클래스 인스턴스를 생성하고 생성한 인스턴스 즉, `클래스 필드(클래스 내부의 캡슐화된 변수)`를 초기화하기 위한 메소드이다.
 
 인스턴스를 생성할 때 new 연산자와 함께 호출한 것이 바로 constructor이며, constructor의 파라미터에 전달한 값은 클래스 필드에 할당한다.
+
 ```
 console.log(Object.getPrototypeOf(foo).constructor === Foo); // true
 ```

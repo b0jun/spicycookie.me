@@ -56,13 +56,13 @@ const Footer = styled.div`
 const Item = styled.a`
   box-shadow: 0px 2px 4px ${props => props.theme.commonColor.shadow};
   border-radius: 100%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
   &:hover {
     animation: ${shake} 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
@@ -140,7 +140,7 @@ const InfoItem = styled.div`
     box-shadow: 0 0 2px ${props => props.theme.commonColor.shadow};
   }
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: ${props => props.theme.palette.mainFont};
   }
@@ -189,24 +189,24 @@ const Profile = () => {
               <BlockTwo>
                 <Footer>
                   <Item href={`/`} onClick={() => alert('페이지 준비중입니다.')}>
-                    <MdAssignmentInd size={34} color={'#f4f6ff'} />
+                    <MdAssignmentInd size={28} color={'#f4f6ff'} />
                   </Item>
                   <Item
                     href={`https://github.com/${social.github}`}
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    <FaGithub size={34} color={'#f4f6ff'} />
+                    <FaGithub size={28} color={'#f4f6ff'} />
                   </Item>
                   <Item
                     href={`https://www.instagram.com/${social.instagram}`}
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    <FaInstagram size={34} color={'#f4f6ff'} />
+                    <FaInstagram size={28} color={'#f4f6ff'} />
                   </Item>
                   <Item href={`mailto:${email}`}>
-                    <MdEmail size={34} color={'#f4f6ff'} />
+                    <MdEmail size={28} color={'#f4f6ff'} />
                   </Item>
                 </Footer>
               </BlockTwo>

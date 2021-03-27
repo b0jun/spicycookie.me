@@ -1,5 +1,6 @@
 ---
 title: '프론트엔드 라이브러리 React'
+subtitle: 'React란 무엇인지, 특징 대해서 알아봅시다.'
 date: '2020-08-20'
 category: 'React'
 cover: './images/reactintro_cover.png'

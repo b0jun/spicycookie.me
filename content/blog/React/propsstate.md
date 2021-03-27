@@ -1,5 +1,6 @@
 ---
 title: 'Props 와 State 다루기'
+subtitle: '리액트 클래스형 컴포넌트에서 Props, State를 다뤄봅시다.'
 date: '2020-08-21'
 category: 'React'
 cover: './images/propsstate_cover.png'

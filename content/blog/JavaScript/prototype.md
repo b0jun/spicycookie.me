@@ -1,5 +1,6 @@
 ---
 title: 'What is prototype, __proto__ ??'
+subtitle: '자바스크립트에서의 prototype, __proto__ 를 파헤쳐 봅시다.'
 date: '2020-07-30'
 category: 'JavaScript'
 cover: './images/prototype_cover.png'

@@ -1,5 +1,6 @@
 ---
 title: 'Stack 자료구조 다루기'
+subtitle: '자바스크립트 코드를 통해 Stack 자료구조를 분석해보자.'
 date: '2020-07-24'
 category: 'DataStructure'
 cover: '../images/stack.png'
@@ -8,7 +9,7 @@ private: false
 
 ## 🧵 스택(Stack)의 정의
 
-스택은 한쪽 끝에서만 데이터를 넣고 뺄 수 있기 때문에 LIFO(Last-In, First-Out), 즉 후입선출 형식을 가진 자료구조이다. 
+스택은 한쪽 끝에서만 데이터를 넣고 뺄 수 있기 때문에 LIFO(Last-In, First-Out), 즉 후입선출 형식을 가진 자료구조이다.
 
 <img src="https://i.ibb.co/9hW5F5p/stack.gif" alt="stack">
 
@@ -24,7 +25,6 @@ private: false
 - 웹 브라우저의 뒤로가기(back)
 - 실행 취소(undo)
 - 후위 표기법(postfix)
-  
 
 ## 💻 스택의 구현
 
@@ -45,7 +45,7 @@ class Stack {
     this.topIndex += 1;
     this.storage[this.topIndex] = data;
   }
-  
+
   pop() {
     if(this.isEmpty()) {
       console.log('Empty!');

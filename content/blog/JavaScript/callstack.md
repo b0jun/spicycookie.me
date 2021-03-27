@@ -1,5 +1,6 @@
 ---
 title: '자바스크립트 비동기 Call Stack'
+subtitle: '비동기 Call Stack에 대해 상세히 파헤쳐봅시다.'
 date: '2020-08-10'
 category: 'JavaScript'
 cover: './images/callstack_cover.png'

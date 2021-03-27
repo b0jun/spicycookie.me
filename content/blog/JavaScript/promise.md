@@ -1,5 +1,6 @@
 ---
 title: '비동기 처리를 위한 Promise 객체'
+subtitle: '비동기를 간편하게 처리할 수 있는 Promise를 분석해봅시다.'
 date: '2020-08-14'
 category: 'JavaScript'
 cover: './images/promise_cover.png'

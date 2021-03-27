@@ -131,7 +131,6 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 280)
       html
       frontmatter {
         title

@@ -1,8 +1,9 @@
 ---
-title: 'test'
-date: '2021-03-18'
+title: 'React Native 시작하기'
+subtitle: 'React Native를 설치하고 간단하게 실행해봅시다.'
+date: '2021-03-27'
 category: 'ReactNative'
 private: false
 ---
 
-TEST
+임시 포스트

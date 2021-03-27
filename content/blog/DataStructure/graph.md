@@ -3,7 +3,7 @@ title: 'Graph 자료구조 다루기'
 date: '2020-07-26'
 category: 'DataStructure'
 cover: '../images/graph.png'
-private: false
+private: true
 ---
 
 그래프(Graph) 용어

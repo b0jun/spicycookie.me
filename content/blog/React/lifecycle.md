@@ -1,5 +1,6 @@
 ---
 title: '리액트 LifeCycle API'
+subtitle: '리액트 생명주기에 대해서 알아봅시다.'
 date: '2020-08-24'
 category: 'React'
 cover: './images/lifecycle_cover.png'

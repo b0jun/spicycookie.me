@@ -1,5 +1,6 @@
 ---
 title: 'Sequelize에서 CRUD 다루기'
+subtitle: 'Sequelize CRUD 다루는 방법에 대해서 알아봅시다.'
 date: '2020-09-12'
 category: 'Node.js'
 cover: './images/sequelizecrud_cover.png'

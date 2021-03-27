@@ -1,5 +1,6 @@
 ---
 title: '[JS] Object-Oriented Programming'
+subtitle: '자바스크립트에서 OOP가 무엇인지 알아봅시다.'
 date: '2020-07-29'
 category: 'JavaScript'
 cover: './images/oop_cover.png'

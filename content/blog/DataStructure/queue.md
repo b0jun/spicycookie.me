@@ -1,5 +1,6 @@
 ---
 title: 'Queue 자료구조 다루기'
+subtitle: '자바스크립트 코드를 통해 Queue 자료구조를 분석해보자.'
 date: '2020-07-24'
 category: 'DataStructure'
 cover: '../images/queue.png'
@@ -10,7 +11,7 @@ private: false
 
 스택은 한쪽 끝에서만 데이터를 넣고 뺄 수 있기 때문에 LIFO(Last-In, First-Out), 즉 후입선출 형식을 가진 자료구조이다.
 
-큐는 먼저 들어간 데이터가 먼저 나오는 FIFO(First-In, First-Out), 즉 선입선출 형식을 가진 자료구조이다. 
+큐는 먼저 들어간 데이터가 먼저 나오는 FIFO(First-In, First-Out), 즉 선입선출 형식을 가진 자료구조이다.
 
 ## 🎨 큐의 ADT
 
@@ -26,7 +27,6 @@ private: false
 - 프로세스
 - 프린터 출력 순서
 - 커피 주문 대기줄
-  
 
 ## 💻 큐의 구현
 
@@ -59,10 +59,10 @@ class Queue {
     const result = this.storage[this.front];
     delete this.storage[this.front];
     this.front += 1;
-    
+
     return result;
   }
-  
+
   peek(){
     if (this.isEmpty()) {
       console.log('Empty!');
@@ -73,7 +73,6 @@ class Queue {
 }
 ```
 
-
 ## 💡 자바스크립트에서 원형 큐
 
 자바스크립트가 아닌 다른 언어에서 배열을 통해 다뤘을 때 주의할 점이 있다. 바로, 배열의 크기가 정해져있기 때문에, Rear가 더 이상 오른쪽으로 이동할 수 없는 상황이 올 수 있기 때문이다. 하지만, 자바스크립트에선 배열의 크기가 고정되어 있지 않으므로, 신경쓰지 않아도 된다. 실제론 다른 언어에서 이를 대비해 원형Queue로 구현해 공간낭비를 최소화 하는데, 자바스크립트에선 이 원형Queue의 효능이 살짝 떨어지는 편이다.
@@ -81,4 +80,4 @@ class Queue {
 ## 🔍 Reference
 
 - 윤성우의 열혈 자료구조 (저자: 윤성우)
-- [bbodela | JavaScript_ stack & queue](https://velog.io/@bbodela/data-structure)
+- [bbodela | JavaScript\_ stack & queue](https://velog.io/@bbodela/data-structure)

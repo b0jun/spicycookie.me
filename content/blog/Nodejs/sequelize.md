@@ -1,5 +1,6 @@
 ---
 title: 'Sequelize ORM'
+subtitle: 'ORM에 대해서 알아보고, Sequelize를 예제를 통해 알아봅시다.'
 date: '2020-09-08'
 category: 'Node.js'
 cover: './images/sequelize_cover.png'

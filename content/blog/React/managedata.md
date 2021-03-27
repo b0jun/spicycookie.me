@@ -1,5 +1,6 @@
 ---
 title: '리액트에서 데이터 다루기(Input, Array)'
+subtitle: '리액트에서 데이터를 예제를 통해 다뤄봅시다.'
 date: '2020-08-26'
 category: 'React'
 cover: './images/managedata_cover.png'

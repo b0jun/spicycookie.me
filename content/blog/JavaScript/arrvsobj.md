@@ -1,5 +1,6 @@
 ---
 title: '배열과 객체의 개념과 차이 (Array vs Object)'
+subtitle: '배열과 객체의 선언, 접근에 대하여 공유합니다.'
 date: '2020-06-17'
 category: 'JavaScript'
 cover: './images/arrvsobj_cover.png'

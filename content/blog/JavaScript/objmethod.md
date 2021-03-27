@@ -1,5 +1,6 @@
 ---
 title: '[JS] Object 관련 메서드'
+subtitle: '자바스크립트에서의 Object 메서드를 예제와 함께 학습해봅시다.'
 date: '2020-06-18'
 category: 'JavaScript'
 cover: './images/objmethod_cover.png'

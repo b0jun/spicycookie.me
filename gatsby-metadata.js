@@ -2,7 +2,7 @@ module.exports = {
   title: `Spicy Cookie Tech Blog`,
   author: `Byeong Jun, Kim`,
   occupation: `Web Developer`,
-  description: `React & RN FrontEnd 관련 `,
+  description: `React & RN 개발자`,
   siteUrl: `https://spicycookie.me`,
   email: `bjkim0228@naver.com`,
   social: {
@@ -35,10 +35,6 @@ module.exports = {
     {
       name: 'Essay',
       color: '#f08a5d',
-    },
-    {
-      name: 'sample',
-      color: '#bfd4fe',
     },
   ],
 };
