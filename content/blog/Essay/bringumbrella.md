@@ -4,7 +4,7 @@ subtitle: 'React Native(Expo)를 통해 다룬 프로젝트에 대한 회고를 
 date: '2020-11-05'
 category: 'Essay'
 cover: './images/bringumbrella.png'
-private: false
+private: true
 ---
 
 ## ☔ 무엇을 만들었나??
