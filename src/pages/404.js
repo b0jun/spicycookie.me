@@ -418,7 +418,7 @@ const NotFoundPage = () => {
               <div className="legLeft"></div>
               <div className="legRight"></div>
             </Body>
-            <Tail></Tail>
+            <Tail/>
           </Block>
         </Container>
       </Wrapper>
