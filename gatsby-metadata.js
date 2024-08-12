@@ -13,6 +13,10 @@ module.exports = {
   utterancesRepo: `billowycloud/spicycookie.me`,
   categories: [
     {
+      name: 'Next.js',
+      color: '#f8ede3',
+    },
+    {
       name: 'JavaScript',
       color: '#f38181',
     },
