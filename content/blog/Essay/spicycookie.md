@@ -6,4 +6,4 @@ cover: './images/spicycookie.png'
 private: false
 ---
 
-Temp
+임시 포스트
