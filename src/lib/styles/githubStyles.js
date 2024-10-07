@@ -32,7 +32,7 @@ const githubStyles = css`
   h4,
   h5,
   h6 {
-    font-family: 'InfinitySans-CondBoldA1', arial, sans-serif;
+    font-family: 'RIDIBatang', arial, sans-serif;
     margin: 30px 0 20px;
     padding: 0;
     -webkit-font-smoothing: antialiased;

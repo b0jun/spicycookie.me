@@ -7,10 +7,10 @@ module.exports = {
   email: `bjkim0228@naver.com`,
   social: {
     instagram: `billowy_clouds`,
-    github: `billowycloud`,
+    github: `b0jun`,
   },
   icon: `content/assets/logo.svg`,
-  utterancesRepo: `billowycloud/spicycookie.me`,
+  utterancesRepo: `b0jun/spicycookie.me`,
   categories: [
     {
       name: 'Next.js',

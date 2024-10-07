@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 	body {
 		line-height: 1;
-		font-family: 'InfinitySans-RegularA1', 'Roboto', 'Noto Sans KR', sans-serif;
+		font-family: 'RIDIBatang', 'Roboto', 'Noto Sans KR', sans-serif;
 		background: ${props => props.theme.palette.mainBackground};
 	}
 	a{
