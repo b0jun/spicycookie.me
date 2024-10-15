@@ -461,7 +461,7 @@ const githubStyles = css`
   tt {
     font-family: 'InfinitySans-RegularA1';
     margin: 0 2px;
-    padding: 0 8px;
+    padding: 1px 8px;
     white-space: nowrap;
     background-color: ${props => props.theme.palette.postAccentBack};
     border-radius: 5px;

@@ -149,6 +149,7 @@ const InfoItem = styled.div`
   }
   p {
     font-size: 0.8rem;
+    line-height: 1.2;
     color: ${props => props.theme.palette.profileDesc};
   }
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
@@ -166,7 +167,7 @@ const Profile = () => {
     <StaticQuery
       query={profileQuery}
       render={data => {
-        const { author, email, social, description, occupation } = data.site.siteMetadata;
+        const { author, email, social, description, resume, occupation } = data.site.siteMetadata;
         return (
           <ProfileBlock>
             <Wrapper>
@@ -188,7 +189,7 @@ const Profile = () => {
               </BlockOne>
               <BlockTwo>
                 <Footer>
-                  <Item href={`/`} onClick={() => alert('페이지 준비중입니다.')}>
+                  <Item href={resume} rel="noreferrer noopener" target="_blank">
                     <MdAssignmentInd size={28} color={'#f4f6ff'} />
                   </Item>
                   <Item
@@ -235,6 +236,7 @@ const profileQuery = graphql`
         author
         occupation
         email
+        resume
         social {
           github
           instagram

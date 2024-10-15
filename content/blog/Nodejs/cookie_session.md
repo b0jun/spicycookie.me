@@ -3,6 +3,7 @@ title: '쿠키 / 세션 인증'
 subtitle: '쿠키와 세션의 차이에 대해 알아봅시다.'
 date: '2020-12-24'
 category: 'Node.js'
+cover: './images/cookie_session_cover.png'
 private: false
 ---
 

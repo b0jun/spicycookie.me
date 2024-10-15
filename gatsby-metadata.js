@@ -1,14 +1,15 @@
 module.exports = {
   title: `Spicy Cookie Tech Blog`,
-  author: `Byeong Jun, Kim`,
-  occupation: `Web Developer`,
-  description: `React & RN 개발자`,
+  author: `김병준`,
+  occupation: `Frontend Engineer`,
+  description: `개발할 때 유용했던 순간들을 기록하는 공간입니다.`,
   siteUrl: `https://spicycookie.me`,
   email: `bjkim0228@naver.com`,
   social: {
     instagram: `billowy_clouds`,
     github: `b0jun`,
   },
+  resume: 'https://b0jun.github.io',
   icon: `content/assets/logo.svg`,
   utterancesRepo: `b0jun/spicycookie.me`,
   categories: [
