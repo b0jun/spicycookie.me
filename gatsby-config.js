@@ -42,7 +42,6 @@ module.exports = {
               theme: 'material',
             },
           },
-          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
