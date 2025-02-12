@@ -375,6 +375,7 @@ const Tail = styled.div`
   z-index: 1;
   animation: ${paddle} 3s ease infinite;
 `;
+
 const NotFoundPage = () => {
   return (
     <Layout>
@@ -418,7 +419,7 @@ const NotFoundPage = () => {
               <div className="legLeft"></div>
               <div className="legRight"></div>
             </Body>
-            <Tail/>
+            <Tail />
           </Block>
         </Container>
       </Wrapper>
