@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Spicy Cookie Tech Blog`,
+  title: `SpicyCookie Tech Blog`,
   author: `김병준`,
   occupation: `Frontend Engineer`,
   description: `개발할 때 유용했던 순간들을 기록하는 공간입니다.`,
