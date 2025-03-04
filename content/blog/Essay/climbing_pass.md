@@ -1,5 +1,5 @@
 ---
-title: '어쩌다 보니 숲을 지켰다'
+title: '전자동의서 - 어쩌다 보니 숲을 지켰다'
 date: '2024-08-01'
 category: 'Essay'
 cover: './images/climbing_pass_cover.png'
