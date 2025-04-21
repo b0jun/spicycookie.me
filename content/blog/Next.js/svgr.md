@@ -2,7 +2,7 @@
 title: 'Next.js에서 SVG 사용하기'
 date: '2024-08-12'
 category: 'Next.js'
-cover: '../images/default.jpg'
+cover: './images/svgr_cover.png'
 private: false
 ---
 
